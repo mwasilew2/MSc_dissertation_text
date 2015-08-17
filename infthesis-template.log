@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.9.11)  17 AUG 2015 19:42
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.9.11)  17 AUG 2015 21:01
 entering extended mode
  %&-line parsing enabled.
 **infthesis-template.tex
@@ -135,7 +135,8 @@ Package: natbib 2007/02/05 8.0 (PWD)
 LaTeX Info: Redefining \cite on input line 602.
 \c@NAT@ctr=\count92
 ) (./infthesis-template.aux
-(./chap1.aux) (./appendix1.aux))
+(./chap1.aux) (./chap2.aux) (./chap3.aux) (./chap4.aux) (./chap5.aux)
+(./appendix1.aux) (./appendix2.aux))
 \openout1 = `infthesis-template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
@@ -147,7 +148,8 @@ LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 80.
 LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 80
 .
- (/usr/share/texmf/tex/latex/psnfss/omspzccm.fd
+
+(/usr/share/texmf/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
 LaTeX Font Info:    ... okay on input line 80.
@@ -159,7 +161,7 @@ LaTeX Font Info:    ... okay on input line 80.
 paper: a4paper
 landscape: --
 twocolumn: --
-twoside: true
+twoside: --
 asymmetric: --
 h-parts: 113.81102pt, 412.56497pt, 71.13188pt
 v-parts: 56.9055pt, 674.33032pt, 113.81102pt
@@ -179,22 +181,23 @@ driver: pdftex
 \textwidth  412.56497pt
 \textheight 674.33032pt
 \oddsidemargin  41.54103pt
-\evensidemargin -1.1381pt
+\evensidemargin 41.54103pt
 \topmargin  -52.36449pt
 \headheight 12.0pt
 \headsep    25.0pt
 \footskip   30.0pt
-\marginparwidth 85.0pt
+\marginparwidth 35.0pt
 \marginparsep   10.0pt
 \columnsep  10.0pt
 \skip\footins  10.8pt plus 4.0pt minus 2.0pt
 \hoffset 0.0pt
 \voffset 0.0pt
 \mag 1000
-\@twosidetrue \@mparswitchtrue 
+
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
- (/usr/share/texmf/tex/context/base/supp-pdf.tex
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count93
 \scratchdimen=\dimen113
@@ -233,20 +236,23 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 86.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+<eushield-normal.pdf, id=1, 369.38pt x 373.395pt>
+File: eushield-normal.pdf Graphic file (type pdf)
+ <use eushield-normal.pdf>
+[1
 
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </usr/share/texmf/tex/latex
+/common/logos/eushield-normal.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 10.79993pt on input line 86.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 86.
- [3] [4] [5] [6
+ [1
 
-]
+] [2] [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
@@ -256,94 +262,169 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
  (./infthesis-template.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 3.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 2.
 
 
 (/usr/share/texmf/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 3.
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 2.
 
 
 (/usr/share/texmf/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 3.
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 2.
 
 
 (/usr/share/texmf/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-)
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+ [4
+
+])
 \tf@toc=\write3
 \openout3 = `infthesis-template.toc'.
 
- [7] [8
-
-]
+ [5]
 \openout2 = `chap1.aux'.
 
  (./chap1.tex
 Chapter 1.
-) [1
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 15.55188pt on input line 9.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+[1
+
+
+
+])
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 114.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 10.79993pt on input line 114.
+ [2]
+\openout2 = `chap2.aux'.
+
+ (./chap2.tex
+Chapter 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 8.
+) [3
+
 
 
 ]
+\openout2 = `chap3.aux'.
+
+ (./chap3.tex
+Chapter 3.
+) [4
+
+
+
+]
+\openout2 = `chap4.aux'.
+
+ (./chap4.tex
+Chapter 4.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+[5
+
+
+
+]) [6]
+\openout2 = `chap5.aux'.
+
+ (./chap5.tex
+Chapter 5.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+[7
+
+
+
+]) [8]
 \openout2 = `appendix1.aux'.
 
- (./appendix1.tex [2
+ (./appendix1.tex
+Appendix A.
+[9
 
 
 
 ]
-Appendix A.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 14.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 14.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 15.55188pt on input line 14.
-[3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 86.
-LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 86.
- [4]) [5] (./infthesis-template.bbl [6
+ [10]) [11]
+\openout2 = `appendix2.aux'.
 
 
-]
+No file appendix2.tex.
+(./infthesis-template.bbl
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no î in font ptmr7t!
-) [7] (./infthesis-template.aux
-(./chap1.aux) (./appendix1.aux)) ) 
+) [12
+
+
+
+
+] (./infthesis-template.aux (./chap1.aux)
+(./chap2.aux) (./chap3.aux) (./chap4.aux) (./chap5.aux) (./appendix1.aux)
+(./appendix2.aux)) ) 
 Here is how much of TeX's memory you used:
- 2559 strings out of 256216
- 35914 string characters out of 1917072
- 87911 words of memory out of 1500000
- 5799 multiletter control sequences out of 10000+200000
- 43993 words of font info for 82 fonts, out of 1200000 for 2000
+ 2611 strings out of 256216
+ 36511 string characters out of 1917072
+ 88811 words of memory out of 1500000
+ 5815 multiletter control sequences out of 10000+200000
+ 46145 words of font info for 85 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 42i,8n,40p,233b,255s stack positions out of 5000i,500n,6000p,200000b,15000s
-{/usr/share/texmf/fonts/enc/dvips/base/8r.enc
-}</usr/share/texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/
-type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvro8
-a.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/font
-s/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pf
-b>
-Output written on infthesis-template.pdf (15 pages, 75147 bytes).
+ 42i,8n,40p,1423b,255s stack positions out of 5000i,500n,6000p,200000b,15000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/t
+exmf/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/helv
+etic/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/sh
+are/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
+Output written on infthesis-template.pdf (18 pages, 116907 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
