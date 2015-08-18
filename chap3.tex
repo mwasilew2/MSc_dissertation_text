@@ -2,7 +2,7 @@
 %% Don't forget to put the \chapter{...} header onto each file.
 
 \chapter{Description of the work undertaken}
-\bibliography{thesis}
+%%\bibliography{thesis}
 	\section{Discover}
 	
 During the discovery phase of the project the objective was to become familiar with the CEC environment, i.e. find out what tools are available and how they are being used and gather information about how to best contribute to the organisation. This was to be done while staying as open as possible, allowing any influences or ideas.
@@ -258,8 +258,66 @@ The Mosaic package has already been imported to the platform as it was being use
 
 What I needed to do was to add to the Mosaic package on IBM Cognos an external source of data (CRM dataset) using built-in Extract, Transform, Load (ETL) mechanisms, which required administrative access rights. The platform is quite flexible when it comes to file extensions and data formats. Some of the acceptable extensions include: .csv, .xls, .xlsx, .xml. The CRM dataset was extracted from the Council’s system and saved as an .xlsx file on a shared network drive. I then created the package and generated a few simple reports as described below.
 
-			
+The above diagram shows the package containing Mosaic and CRM datasets loaded in Cognos. A simple query is then used to show the content of it to verify that it is working as expect - CRM entries are linked with Mosaic entries with UPRN. The results of the query are visualised on the diagram below.
+
+The above screen shot is showing another query which was filtering entries based on the date of creation.
+
+The diagram above shows a chart that was created and here you can see how the layout of the report can be controlled – at the top of the page a list is added.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart.jpg}
+      \caption{first chart}
+       \label{normal_case}
+\end{figure}
+
+In this case, the chart was based on the data from the list above. This was done in order to manually verify that the chart generation happens as expected. Below is the second part of the dataset and the filter used.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart, data to confirm chart is valid.jpg}
+      \caption{data to confirm chart is valid}
+       \label{normal_case}
+\end{figure}
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart, other dimension.jpg}
+      \caption{data to confirm chart is valid}
+       \label{normal_case}
+\end{figure}
+
+This diagram shows exactly the same dataset, but a different dimension is used for axis x and data series.
+
+Below are a few more examples of reports generated.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/second chart, crm and mosaic, all subjects, entire May.jpg}
+      \caption{second chart – group category, all subjects, entire May, zoom in to legend}
+       \label{normal_case}
+\end{figure}
+
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - all reports.png}
+      \caption{third chart - group code, all subjects}
+       \label{normal_case}
+\end{figure}
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - bins, recycle.png}
+      \caption{fourth chart - group code, missed bins, recycling bags (4 categories)}
+       \label{normal_case}
+\end{figure}
+
+
+
 			\subsubsection{Selected problems}
+			
+Selected problems experienced in this phase are listed in sections below.			
 			
 				\paragraph{Linking problem}
 				
@@ -303,6 +361,13 @@ In terms of ideas for analysis, I developed a list of questions I thought were r
 		
 		\subsection{Design brief for the next stage}
 		
+The data analysis will be conducted using IBM Cognos platform and it will use Mosaic Experian package combined with an extract of the data from the CRM system. The reports generated would not be of performance indicators nature, but will try to find data that can show behaviour of citizens manifesting in the data. They are not (primarily) intended as monitoring tools, but rather as ways of expanding perception of what is happening in service delivery. The three main questions that will be answered are listed below and they are described in detail in the following sections:
+\begin{enumerate}
+\item Cases of intentional use of multiple channels for the same issue
+\item Patterns of behaviour across different channels
+\item Who are the primary users of CEC services
+\end{enumerate}
+		
 			\subsubsection{Report 1 - cases of intentional use of multiple channels for the same issue}
 			
 This analysis is aiming at identifying cases where citizens want to report an issue, but do not trust in it being handled the same way through different channels. The reasoning behind such behaviour is that if many tickets are opened for the same problem, one of them will “get the job done”. It will be solved the quickest possible way, because if the process behind one channel has more resources available it will be handled quicker than with the process behind another channel.
@@ -313,7 +378,35 @@ The purpose of this analysis is not to provide evidence about the assumptions be
 			
 			\subsubsection{Report 2 - patterns of behaviour across different channels}
 			
+The purpose of this analysis is to understand patterns of behaviour of citizens across many channels.
+
+Some of the patterns that might be revealed include:
+\begin{itemize}
+\item The user initiated a service through a channel of preferred choice (e.g. web-form). However, after not hearing from the Council for some time, the user is unsure about the status of the process and uses a channel that is considered trust worthy (e.g. face-to-face) to confirm its state.
+\item If the above pattern occurs only for one type of transaction it might suggest a problem with a particular service. For example, if many users try to report a missed bin over a web-form, but eventually use a phone to do it (or switch after a few uses) it might highlight this particular web-form.
+\item An active user who uses a particular service is trying out a digital interface, but for some reason goes back to how he access it before
+\item Numerical evidence for how quickly people adapt new channels (e.g. how effective an information campaign was)
+\end{itemize}	
+			
 			\subsubsection{Report 3 - who are the primary users of CEC services}
+			
+Designing is a task that should be conducted with the user in mind and having an understanding of who is the primary receiver of the design helps tremendously. For this reason, designers use “personas” which make it easier to know how the user thinks or behaves. The more detailed and accurate information about the user one has, the  better design decisions one can make, which results in interfaces and services that better fit the needs of people.
+
+The questions that will be answered within this part of work are trying to increase the understanding of users receiving Council’s services. In particular, 3 user groups are recognised:
+\begin{itemize}
+\item never used CEC services
+\item uses CEC services occasionally (defined here as having no more than 3 interactions with CEC)
+\item active user of CEC services (more than 3 interactions with CEC)
+\end{itemize}
+
+The analysis is trying to identify socio-economic backgrounds that users from all 3 groups have. Because CRM data contains only data about citizens who used CEC services it will not contain information about the first group. However, by determining who is interacting with CEC one can conclude who is not using those services. In other words, social groups that do not appear in the CRM dataset can be categorized into the first group.
+
+Some of the questions that could be answered include:
+\begin{itemize}
+\item who are primary users in general
+\item which social group has the most interactions within a service
+\item which service is most popular within a social group
+\end{itemize}
 
 	\section{Develop}
 	
@@ -341,13 +434,68 @@ Query 3: filter out from Query 2 cases with only one occurrence of such behaviou
 
 			\subsubsection{Implementation}
 			
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{Report 1/report 1, query 1.jpg}
+      \caption{Report 1, Query 1}
+       \label{normal_case}
+\end{figure}
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{Report 1/report 1, query 3.jpg}
+      \caption{Report 1, Query 3}
+       \label{normal_case}
+\end{figure}
+			
 			\subsubsection{Additional work}
+			
+There were only two cases found of multiple cases of reporting a few times a day and none of them was unwanted behaviour. It can be speculated that those were situations in which someone was having problems using CEC interfaces (cases of double entries with very short time distance).
+
+Query 4 was created after conducting the above analysis. Its purpose was to provide a general overview on the number of multiple reports to give an idea of how much people struggle with an interface and how quickly they learn it.
+
+Query 4: count number of occurrence of such behaviour (how many times did someone report the same issue more than once on the same day)
+
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{Report 1/report 1, query 4.jpg}
+      \caption{Report 1, Query 4}
+       \label{normal_case}
+\end{figure}
+
+In simple words, there were 194 people in May 2015 who on two separate occasions reported on the same subject, on the same day.
 			
 		\subsection{Report 2 - patterns of behaviour across different channels}
 		
+This part of analysis is trying to cast some light on behaviour of citizens across different channels.
+
+It is based on 2 counters. The first one provides information about total number of issues reported by a citizen (“count no of issues”). The second one counts number of separate channels used to report those issues (“channels used”). Then filters are used to remove from the report cases with number of issues below 2 (“count no of issues > 1”) and number of channels used below 2 (“channels used > 1”).
+
+In order to make the results easier to analyse, entries are grouped using UPRN – entries coming from one user are listed next to each other. Within this group, they are ordered using reference number (“Reference \#”). Reference number is used instead of date of creation because there are multiple cases where there is more than 1 entry during a day. In those situations, ordering by the date does not ensure the same sequence as the sequence of creation. Reference number on the other hand, consists of 2 parts: day of creation and a serial number assigned in an ascending manner and thus the original sequence can be deducted. In the following example, both reference numbers were created on the same day, but the second one was created later which can be determined by the second part of the string:
+\begin{lstlisting}
+150511-000837
+150511-000849
+\end{lstlisting}
+
+The diagram below presents part of the report that was generated.
+
+Citizen with UPRN 000906026074 submitted a “Missed bin or box” request through the web-form on 5th May and made a phone call the next day regarding a service from the same “Product Hierarchy”. It can be speculated, that both interactions were about the same issue. In order to verify such claim these interactions would have to be investigated further, e.g. using comments left by consultants (unstructured data) \citep{baars2008management}. Such additional information would be extremely useful in determining reasons for the user following up over the phone.
+
+Citizen with UPRN 000906037096 submitted 2 queries for the same issue on 12th of May. The next day he submitted again 2 queries over the web for a different service, but what is really interesting is that after submitting them he made a phone call to the Council. This is a great example of identifying a situation where someone started with the web-form, but then for some reason made a phone call anyway. It might have been a simple question about the form, but clearly the person made the call after going through the web-form. It might be the case that putting the information the user requested on the form would help other users in the future.
+		
 			\subsubsection{Technical design}
 			
+Query 1: count number of issues reported by a citizen, count number of channels used to report those issues, filter out number of issues below two, filter out number of channels used below two
+			
 			\subsubsection{Implementation}
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{Report 2/report 2.2 page 2.png}
+      \caption{Report 2, example}
+       \label{normal_case}
+\end{figure}
 			
 		\subsection{Report 3 - who are the primary users of CEC services}
 		
@@ -357,8 +505,115 @@ The letters at the bottom of charts (A,B,C,…) are Mosaic groups. Detailed info
 
 			\subsubsection{Technical design}
 			
+Query 1: gather relevant data, count number of all interactions of a user, assign a value based on the counter identifying the category as described above (up to three, above three), assign Mosaic groups to entries
+
+Query 2: Which services are the most popular among people in both categories? – generate a chart with services on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for up to and below the threshold level
+
+Query 3: Which Mosaic groups do people from both categories belong too? (which social groups use CEC services most actively) – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation)
+
+Query 4: Which services are being used by different Mosaic groups? – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for different services
+
+Query 5: Which Mosaic group is the most active within a service? This part of the report is using “value prompts” which allow to select a service which will be analysed. It shows a chart for the selected service.
+			
 			\subsubsection{Implementation}
-	
+			
+			
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/list of citizens who had at most 3 interactions with the Council in May.jpg}
+  \captionof{figure}{Report 3, Query 1 (up to 3 interactions)}
+  \label{normal_case}
+\end{center}
+			
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/list of citizens who had more than 3 interactions with the Council in May.jpg}
+  \captionof{figure}{Report 3, Query 1 (above 3 interactions)}
+  \label{normal_case}
+\end{center}
+
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{MW 12.08/MW 12.08/Report 3, query 2, axis sorted.png}
+  \captionof{figure}{Report 3, Query 2}
+  \label{normal_case}
+\end{center}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 1.1.jpg}
+  \captionof{figure}{Report 3, Query 2 (above three)}
+  \label{normal_case}
+\end{center}
+
+
+
+
+
+
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 1.2.jpg}
+  \captionof{figure}{Report 3, Query 2 (up to three)}
+  \label{normal_case}
+\end{center}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 3.2 both on one chart.png}
+  \captionof{figure}{Report 3, Query 3}
+  \label{normal_case}
+\end{center}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 3.1 above 3.png}
+  \captionof{figure}{Report 3, Query 3 (above three)}
+  \label{normal_case}
+\end{center}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 3.1 up to 3.png}
+  \captionof{figure}{Report 3, Query 3 (up to three)}
+  \label{normal_case}
+\end{center}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 2.1.jpg}
+  \captionof{figure}{Report 3, Query 4}
+  \label{normal_case}
+\end{center}
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 2.2.png}
+  \captionof{figure}{Report 3, Query 4 (more granular user groups - Mosaic group and type)}
+  \label{normal_case}
+\end{center}
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 2.3 select screen, selected value.jpg}
+  \captionof{figure}{Report 3, Query 5. Value prompt page with selected service - "Missed Bin - Individual"}
+  \label{normal_case}
+\end{center}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 2.3 group code chart.jpg}
+  \captionof{figure}{Report 3, Query 5}
+  \label{normal_case}
+\end{center}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, 2.3 group type code chart.jpg}
+  \captionof{figure}{Report 3, Query 5. (more granular user groups - Mosaic group and type)}
+  \label{normal_case}
+\end{center}
+
+
 	\section{Deliver}
 	
 		\subsection{Presentation at the Council}
