@@ -49,12 +49,60 @@ The author also provides a structured framework for thinking about innovation in
 Data-driven design is an emerging field of study that gained popularity with the digitization of our world and in particular with what is known as big data. The premise of data-driven design is an additional layer of perception provided by data collection and processing, previously unavailable to humans. Although the practices of data-driven design are far from being well established, more and more voices are being raised that consider it a very viable tool when used properly with other methods \citep{Neirotti2014}.
 	
 		\subsection{What would a cup say if it could speak?}
-		
+
+Data can be used to drive the design of many things. Common areas of use of data-driven design in Informatics include websites (web analytics) or mobile apps. A designer can change the layout of a website and in real time analyse what impact on the behaviour of the user it has \citep{CSIRO2015}.
+
+However, computational systems are being used for much more than just reading websites. Vizie is a tool analysing social media feeds and it is able to inform government institutions about a failure of a service, provide situational awareness in emergencies or simply help being in touch with citizens by informing about major topics of the day \citep{CSIRO2015a}. In one case, social media is actually the main, preferred way of communicating with a government institution – for better or for worse \citep{MITMediaLab2015}.
+
+The Internet of Things (IoT) is another case of digitization entering our lives. We are instrumenting objects in our surroundings “giving them a voice”. IoT devices will generate a lot of data about their users and the devices themselves. Vessyl is an IoT cup designed to be part of a bigger health and wellness ecosystem. It traces the nutritional value of liquids consumed by the user \citep{MarkOne2014}. Interesting questions arise from the designers’ perspective with the emergence of such devices. What impact on the design of the cup do the consumption habits of its users have? If the cup could capture detailed data about its usage patterns – location, acceleration, angle of tilt – could it suggest a better design (e.g. thinner, taller, rounded edges)? Maybe the cup would tell us something else, unrelated to the drink, something that we cannot think of simply because we are humans?
+
+This vast amount of data captured in different areas of people’s lives provides a lot of opportunities for generating design insights. It is important to stress that having data by itself is not sufficient. It is what follows – data analysis – that makes all the difference and that is where uncharted territories are.
+
 			\subsubsection{What is big data?}
 
+There are many definitions of what Big Data is and in some cases not only do they differ, but even stand in contradiction. This might be due to the fact that early cases of use of the term happened in different fields \citep{demchenko2014defining, Ward2013}. Most commonly, Big Data is associated with data storage and data analysis, which in themselves are not new concepts at all. A description that is widely accepted as fundamental in coining the term Big Data is the “3 Vs” definition provided by Gartner in 2001 \citep{douglas20013d, Ward2013}. Since then, the “Vs” description has been used and expanded (to “5 Vs”) by many \citep{McAfee2012, minelli2012big, demchenko2014defining, NIST2015}.
 
+The “5Vs” of big data are as follows:
+\begin{itemize}
+\item Volume – 90\% of world’s data was generated over the last 2 years; by some, big data is considered when dealing with volumes over peta bytes ($10^{15}$)
 
-adf
+\item Velocity – more data being received than can be processed using “traditional” data analysis approach; you receive more information than you can process before a decision has to be made; processing of real-time data streams is becoming essential
 
+\item Variety – different types of data are being accessible (structured data, sensory data, social media data, voice recordings, photos, videos)
+
+\item Veracity (validity) – lack of control over quality and accuracy which leads to inconsistencies and incompleteness
+
+\item Value – how to get value out of data
+\end{itemize}
+
+		\subsection{Data Analysis}
+		
+			\subsubsection{Artificial Intelligence}
+			
+The proliferation of Artificial Intelligence has changed the landscape of many fields in science. 
+
+Genetic Algorithms (GA) are one example of it. In some cases, they can give remarkable results outperforming humans. In one experiment, which was trying to optimise the design of an integrated circuit, GA generated solution which was much better than the one created by humans \citep{Harvey1997}. At the current level of complexity, chips are not designed by humans placing transistors one by one. Instead, humans describe the desired logical functions which are then translated by (sub-optimal) algorithms into a “mask work”. What was done in the experiment in Sussex, was to skip the entire process altogether and using GA holistically promote chips which were more desirable. This was achieved by either keeping a design for the next iteration or removing it based on specific criteria. The result was a very difficult to understand design – there were gates that seemed to do nothing, but when removed the behaviour of the entire chip changed \citep{Harvey1997}. Moreover, it used fewer resources (transistors) and made use of the “grey states” (undefined states experienced in an integrated circuit immediately after a clock signal, when a transistor is switching from one state to another). GA are mostly used for optimisation purposes.
+
+Fields of AI that are more often used for data analysis include Machine Learning (ML) and Pattern Recognition (PR) \citep{bishop2006pattern}. They have many uses with structured and unstructured data. Some of the those relevant in this context include: text/speech recognition, customer choices analysis, usage patterns analysis, decision support systems involving judgment, load forecasting, marketing and sales \citep{witten2005data}.
+			
+			\subsubsection{Business Intelligence}
+			
+The term Business Intelligence (BI) has been coined by Howard Dresner from Gartner Group in 1989. It describes a set of data-driven tools (tools that use data analysis in their workings) and practices that emerged from Decision Support Systems (DSS) which went through a time of intense development in 1980’s \citep{power2008decision}. BI has been a very popular and dynamic field in the last few years which is attributed to, among many others, “more turbulent business environments” and higher demands for profitability \citep{sacu2010bidm, power2008decision, baars2008management}. A range of BI tools that are becoming popular recently are the user-driven solutions which promote “self-service” as opposed to dependence on IT department’s involvement \citep{IBM2015a, Qlik2015, Microsoft2015, imhoff2011self}.
+
+The goal of BI is to unveil valid risks and performance indicators, through the means of interpretation (processing) of large volumes of data, in order to support managers on all levels: strategic, tactical and operational \citep{baars2008management}.
+
+There are numerous models describing BI maturity. In general, they take into consideration the following concepts: deployment, use and impact of BI in an organisation \citep{Lahrmann2011}.
+
+Currently most widely used tools within BI are reporting, data mining and Online Analytical Processing (OLAP). In many areas this is insufficient as a lot of data is not numerical or otherwise referred to as unstructured, e.g. voice transcripts, comments, e-mails, documents. This is especially true for analysing data about interactions with customers such as data from Customer Relationship Management (CRM) systems \citep{baars2008management}. There are different approaches and frameworks for building systems that incorporate both data types. In general, they can either process unstructured data to extract from it information in a more structured way (e.g. text processing), present both data types next to each other without processing unstructured data (e.g. show all e-mails relevant to a performance indicator to allow human to understand the situation) or anything in between.
+
+		\subsection{Smart Cities}
+		
+Smart Cities (SC) try to improve the lives of citizens by creating more sustainable and more efficient urban environment for people to live in \citep{geertman2015planning}. Using technology-based solutions they try to address some of the challenges faced by metropolitan areas \citep{Neirotti2014}. Although there is no clear definition yet of what a SC is, it is widely accepted that Information and Communications Technologies (ICT) play a major role in SC by acting as their “nervous system” \citep{Neirotti2014, geertman2015planning}. However, ICT capabilities by themselves are not sufficient and have to be matched with adequate human and organisational capital in order to enable cities to act accordingly.  Some research suggest that globally, initiatives within SC are highly diverse and depend heavily on the cultural and socio-economic background of the geographical region making it non trivial to find commonalities, but with time a few archetype models will emerge \citep{Neirotti2014, geertman2015planning}. The highest number of initiatives in area of SC has been observed in “Natural resources and energy” and “Transport and mobility” \citep{Neirotti2014}.
+
+Transportation in Nairobi, Kenya using semi-formal mini-buses has been a subject of a project that used GPS data to improve route planning and way finding \citep{klopp2015leveraging}. The location data was not acquired through telecommunications operators, but was willingly shared by users via a smartphone app. It was made public in GTFS format and processed using open-source tools such as Open Trip Planner \citep{klopp2015leveraging}. It is an example of “bottom-up” approach in which citizens are empowered (Open Data) and supported by local authorities to act and improve their city \citep{Neirotti2014}.
+
+In 2012 the New York City Council has approved a law requiring all city agencies to open their data by 2018. One of the agencies helping in this process is Mayor’s Office of Data Analytics (MODA). MODA is responsible for initiatives within five categories: Supporting Operations, Citywide Data Sharing, Disaster Response and Resiliency, Economic Development, Open Data. They are offering courses to other City government employees about data and tools available to them and are also promoting data driven decision making \citep{NYCMODA2014}. One interesting project in New York City is called “Hudson Yards Redevelopment Project” in which an entire part of the city will be built from scratch. It will be collecting information about air quality, pedestrian traffic, energy production and consumption. It will have a trash-disposal system to remove waste via underground pneumatic tubes.
 
 	\section{Double Diamond}
+	
+“Double Diamond” is a model of the design process developed by the UK Design Council \citep{council2007eleven, council2005double}. It is a result of a qualitative study of practices in companies focused on innovation and it describes the commonalities in the creative activities that can be observed among designers regardless of the field they are working in. The model divides the design process into 4 phases as pictured in the diagram below. Each of those phases is focused on a different objective and involves methods which are characteristic to that stage.
