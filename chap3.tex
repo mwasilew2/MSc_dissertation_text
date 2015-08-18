@@ -2,7 +2,6 @@
 %% Don't forget to put the \chapter{...} header onto each file.
 
 \chapter{Description of the work undertaken}
-%%\bibliography{thesis}
 	\section{Discover}
 	
 During the discovery phase of the project the objective was to become familiar with the CEC environment, i.e. find out what tools are available and how they are being used and gather information about how to best contribute to the organisation. This was to be done while staying as open as possible, allowing any influences or ideas.
@@ -26,12 +25,11 @@ As it turned out, it was a first meeting in a series. There was no formalised do
 
 The diagram below shows all the people who I interacted with during the entire project. Connections between different actors represent how I got to know them. Circles with coloured backgrounds highlight people who I spoke with in this phase. Orange colour marks people related with University of Edinburgh, blue is for CEC employees. Level of a circle does not reflect a position in the Council’s structure - it is used solely for increasing legibility of the diagram.
 
-\begin{figure}
-\centering
-     \includegraphics[height=\textheight]{Discovery_phase_people.png}
-      \caption{CEC employees involved in the project.}
-       \label{normal_case}
-\end{figure}
+\begin{center}
+  \includegraphics[height=0.95\textheight]{Discovery_phase_people.png}
+  \captionof{figure}{CEC employees involved in the project.}
+  \label{normal_case}
+\end{center}
 
 
 From these meetings and discussions I gained a brief understanding of the situation at CEC. There was a big effort within the Council aiming at transforming the way services are being delivered and “Channel Shift” was a part of it. The outsourced ICT services in the Council were delivered by British Telecom starting from 2001 and the contract was set to end in 2016. In order to find a new service provider under revised conditions, a public tender was being held during the writing of this thesis. It considered “Channel Shift” as one of the significant enhancements of the Council’s operations. Final report suggesting the best bidder was submitted by the Finance and Resources Committee on third of August 2015 \citep{FinanceandResourcesCommittee2016}.
@@ -83,13 +81,11 @@ Some of the information about a household available in Mosaic includes:
 	
 For example, selected characteristics of group D, referred to as “Rural Reality”, include: rural locations, village and outlying houses, agricultural employment, affordable value homes, slow Internet speeds. People in this group are aged 66+, they have income of £20k- £29k, they live alone (or in “pseudo families”) and compared to the rest of the population are less likely to have children. They live in bungalows, named buildings or semidetached households in majority owned by them. Comparing to the rest of the population in the UK, they are half as likely to prefer being contacted via  mobile call (in contrary to a landline). Majority of them use “pay as you go” tariffs with mobile bill of 10 pounds or less, they read regional papers and are very likely to do groceries in Co-op and very unlikely to buy in Waitrose. Much bigger part of this group (compared to other groups in the UK) is likely to use e-mail monthly and not listen to music using mobile technologies. 
 
-\begin{figure}
-\centering
-     \includegraphics[width=\textwidth]{mosaic_segmentation_portal.jpg}
-      \caption{Segmentation portal visualising Mosaic data \citep{Experian2014}.}
-       \label{normal_case}
-\end{figure}
-
+\begin{center}
+  \includegraphics[width=\textwidth]{mosaic_segmentation_portal.jpg}
+  \captionof{figure}{Segmentation portal visualising Mosaic data \citep{Experian2014}.}
+  \label{normal_case}
+\end{center}
 
 
 		\subsection{IBM Cognos}
@@ -109,14 +105,15 @@ IBM Cognos BI is an enterprise class SOA platform \citep{browne2010ibm}. Its n-t
 \item The data tier
 \end{itemize}
 
-\begin{figure}
-\centering
-     \includegraphics[width=\textwidth]{cognos_architecture.jpg}
-      \caption{IBM Cognos BI architecture \citep{browne2010ibm}}
-       \label{normal_case}
-\end{figure}
 
-The platform operates by using different services which are run at those three levels \citep{browne2010ibm}, for example:
+\begin{center}
+  \includegraphics[width=\textwidth]{cognos_architecture.jpg}
+  \captionof{figure}{IBM Cognos BI architecture \citep{browne2010ibm}}
+  \label{normal_case}
+\end{center}
+
+
+The platform operates by using different services which are run at those three levels \citep{Browne2010}, for example:
 \begin{itemize}
 \item Agent service – responsible for running agents, “determines which tasks to execute and forwards those tasks to the monitor service for execution”
 \item Monitor service – handles requests which will be run in the background including background tasks, reports scheduled to be run and e-mailed, jobs
@@ -137,46 +134,21 @@ IBM Cognos can be accessed using either a web interface called IBM Cognos Connec
 The URL for accessing the development instance of IBM Cognos Connection is:\\
 http://c-cog-dev-app-1/ibmcognos/
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/welcome page of web interface of Cognos.jpg}
-      \caption{Welcome page of IBM Cognos Connection 10.2.1 (web interface to the entire package)}
-       \label{normal_case}
-\end{figure}
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/welcome page of web interface of Cognos.jpg}
+  \captionof{figure}{Welcome page of IBM Cognos Connection 10.2.1 (web interface to the entire package)}
+  \label{normal_case}
+\end{center}
+
 
 From this welcome page you can start applications available within your license, e.g. Report Studio. The first step after starting Report Studio is selection of the data package that will be used.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/select package for Report Studio.jpg}
-      \caption{Select data package for Report Studio}
-       \label{normal_case}
-\end{figure}
 
 After selecting the data package, one can either open an existing report or start creating a new one. In the latter case, a number of templates are available.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/report studio welcome page.jpg}
-      \caption{Report Studio welcome page}
-       \label{normal_case}
-\end{figure}
-
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/select template.jpg}
-      \caption{Select a template}
-       \label{normal_case}
-\end{figure}
 
 The following figure shows Report Studio with a blank report and Mosaic data loaded.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/blank template, mosaic data loaded.jpg}
-      \caption{Blank template, Mosaic data loaded}
-       \label{normal_case}
-\end{figure}
 
 Graphic User Interface (GUI) makes the entire process quick and easy, but it is used to set the general structure of the report. The specifics of the report, e.g. how to filter data, have to implemented using queries.
 
@@ -236,13 +208,14 @@ After the discovery phase an understanding of the specifics of the project withi
 			
 The diagram below shows all people I interacted with in the entire project with those I spoke with in this phase highlighted by coloured background. Orange background being for University related people and blue for people working for CEC.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[height=\textheight]{Define_phase_people.png}
-      \caption{CEC employees involved in the project.}
-       \label{normal_case}
-\end{figure}
-	
+
+\begin{center}
+  \includegraphics[height=0.95\textheight]{Define_phase_people.png}
+  \captionof{figure}{CEC employees involved in the project.}
+  \label{normal_case}
+\end{center}
+
+
 At this stage the clients were encouraged to drive the design decisions, e.g. they had a final say in selecting questions to answer with this project. This was mostly done in cooperation with Sally Kerr and Andy Thomson.
 
 The meetings were also trying to select tools that would be used and if possible try to confirm they could be used by building a simple prototype. This was mostly done in collaboration with people from BI section of CEC, Kevin Kelly and Angela McInnes.
@@ -264,54 +237,55 @@ The above screen shot is showing another query which was filtering entries based
 
 The diagram above shows a chart that was created and here you can see how the layout of the report can be controlled – at the top of the page a list is added.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart.jpg}
-      \caption{first chart}
-       \label{normal_case}
-\end{figure}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart.jpg}
+  \captionof{figure}{first chart}
+  \label{normal_case}
+\end{center}
 
 In this case, the chart was based on the data from the list above. This was done in order to manually verify that the chart generation happens as expected. Below is the second part of the dataset and the filter used.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart, data to confirm chart is valid.jpg}
-      \caption{data to confirm chart is valid}
-       \label{normal_case}
-\end{figure}
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart, data to confirm chart is valid.jpg}
+  \captionof{figure}{data to confirm chart is valid}
+  \label{normal_case}
+\end{center}
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart, other dimension.jpg}
-      \caption{data to confirm chart is valid}
-       \label{normal_case}
-\end{figure}
+
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart, other dimension.jpg}
+  \captionof{figure}{first chart - other dimension}
+  \label{normal_case}
+\end{center}
+
 
 This diagram shows exactly the same dataset, but a different dimension is used for axis x and data series.
 
 Below are a few more examples of reports generated.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/second chart, crm and mosaic, all subjects, entire May.jpg}
-      \caption{second chart – group category, all subjects, entire May, zoom in to legend}
-       \label{normal_case}
-\end{figure}
+
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/second chart, crm and mosaic, all subjects, entire May.jpg}
+  \captionof{figure}{second chart – group category, all subjects, entire May, zoom in to legend}
+  \label{normal_case}
+\end{center}
 
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - all reports.png}
-      \caption{third chart - group code, all subjects}
-       \label{normal_case}
-\end{figure}
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - all reports.png}
+  \captionof{figure}{third chart - group code, all subjects}
+  \label{normal_case}
+\end{center}
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - bins, recycle.png}
-      \caption{fourth chart - group code, missed bins, recycling bags (4 categories)}
-       \label{normal_case}
-\end{figure}
+
+
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - bins, recycle.png}
+  \captionof{figure}{fourth chart - group code, missed bins, recycling bags (4 categories)}
+  \label{normal_case}
+\end{center}
 
 
 
@@ -319,23 +293,20 @@ Below are a few more examples of reports generated.
 			
 Selected problems experienced in this phase are listed in sections below.			
 			
-				\paragraph{Linking problem}
-				
+				\paragraph{Linking problem}\mbox{}\\
 During the import stage where the CRM data was being added to the Mosaic package there was a problem with linking the two datasets. As a result, I was considering alternative solutions in which I would build the necessary tools.
 
 One of the analysed solutions included setting up a server with an SQL/NoSQL database, populating the database with the CRM and Mosaic data and then conducting analysis using SQL and Python. The focus of the project would shift and the insights generated would be of a different level and quantity. This would decrease usefulness of the project to CEC and move the project away from the initial objective.
 
-After a couple of failed attempts with Cognos I wanted to go through the process step by step and document the problem in as much detail as possible and move on to building the new set up. I was using Cognos documentation in the process (IBM 2015c), (IBM 2015d). Fortunately, the detailed approach adopted has led to finding a solution and the platform could be used in the project.
+After a couple of failed attempts with Cognos I wanted to go through the process step by step and document the problem in as much detail as possible and move on to building the new set up. I was using Cognos documentation in the process \citep{IBM2015, IBM2015c}. Fortunately, the detailed approach adopted has led to finding a solution and the platform could be used in the project.
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/importing CRM data into Cognos 2.jpg}
-      \caption{Importing CRM data to Report Studio, CRM data loaded, but Mosaic data unavailable for linking}
-       \label{normal_case}
-\end{figure}
-				
-				\paragraph{CRM data}
-				
+\begin{center}
+  \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/importing CRM data into Cognos 2.jpg}
+  \captionof{figure}{Importing CRM data to Report Studio, CRM data loaded, but Mosaic data unavailable for linking}
+  \label{normal_case}
+\end{center}
+	
+				\paragraph{CRM data}\mbox{}\\
 One of the problems with analysing CRM data was quality of the data. There are inconsistencies in implementations across different channels. For example, entries regarding requests for recycling bins or bags reported through two different channels had different values in the “subject” field: web - "Recycling bags or bins", phone - "Recycling bins or bags". Initially it was believed that it was an older implementation, but both values were present throughout the entire dataset suggesting both of them were in use. As a result, when analysing the data, filters had to include all possible strings related to the desired value or use a different field – “Product Hierarchy”, as was the case with the final reports.
 
 Another problem was related to lack of documentation of the deployment of the CRM system and difficulties in talking to someone knowledgeable about the system. The author could not establish in a reliable way the difference between “Product Hierarchy” field and “Subject” field. In the “incidents” table there are entries: “UPRN”, “second UPRN”, “UPRN 2” but they are not documented anywhere. In cases like this a “best guess” approach had to be used. 
@@ -425,29 +396,24 @@ Proving such behaviour using solely data analysis is very difficult and should n
 It has to be stressed that this analysis is not trying to automatically mark people as “bad users”, but instead bring attention of a service manager to cases of unusual uses of the system. They might be pointing to a number of issues such as different delivery times across different channels, lack of trust in digital channels, low effectiveness of a channel in addressing a user need. They should be analysed and investigated further and should be treated as potential inspirations or initial influences for further improvement of service delivery.
 
 			\subsubsection{Technical design}
-			
-Query 1: gather all relevant data (do not include entries if channel is not specified) and add a counter for how many issues someone filed on one day
-
-Query 2: filter results of Query 1 so that only people who reported more than one issue on one day regarding the same subject are left
-
+Query 1: gather all relevant data (do not include entries if channel is not specified) and add a counter for how many issues someone filed on one day\\
+Query 2: filter results of Query 1 so that only people who reported more than one issue on one day regarding the same subject are left\\
 Query 3: filter out from Query 2 cases with only one occurrence of such behaviour (of multiple issues regarding one subject reported on the same day)
 
 			\subsubsection{Implementation}
-			
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{Report 1/report 1, query 1.jpg}
-      \caption{Report 1, Query 1}
-       \label{normal_case}
-\end{figure}
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{Report 1/report 1, query 3.jpg}
-      \caption{Report 1, Query 3}
-       \label{normal_case}
-\end{figure}
-			
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 1/report 1, query 1.jpg}
+  \captionof{figure}{Report 1, Query 1}
+  \label{normal_case}
+\end{center}
+
+\begin{center}
+  \includegraphics[width=\textwidth]{MW 12.08/MW 12.08/Report 1, query 3.jpg}
+  \captionof{figure}{Report 1, Query 3}
+  \label{normal_case}
+\end{center}
+	
 			\subsubsection{Additional work}
 			
 There were only two cases found of multiple cases of reporting a few times a day and none of them was unwanted behaviour. It can be speculated that those were situations in which someone was having problems using CEC interfaces (cases of double entries with very short time distance).
@@ -456,13 +422,13 @@ Query 4 was created after conducting the above analysis. Its purpose was to prov
 
 Query 4: count number of occurrence of such behaviour (how many times did someone report the same issue more than once on the same day)
 
+\begin{center}
+  \includegraphics[width=\textwidth]{MW 12.08/MW 12.08/Report 1, query 4, cut.jpg}
+  \captionof{figure}{Report 1, Query 4}
+  \label{normal_case}
+\end{center}
 
-\begin{figure}[hp]
-\centering
-     \includegraphics[width=\textwidth]{Report 1/report 1, query 4.jpg}
-      \caption{Report 1, Query 4}
-       \label{normal_case}
-\end{figure}
+
 
 In simple words, there were 194 people in May 2015 who on two separate occasions reported on the same subject, on the same day.
 			
@@ -505,14 +471,10 @@ The letters at the bottom of charts (A,B,C,…) are Mosaic groups. Detailed info
 
 			\subsubsection{Technical design}
 			
-Query 1: gather relevant data, count number of all interactions of a user, assign a value based on the counter identifying the category as described above (up to three, above three), assign Mosaic groups to entries
-
-Query 2: Which services are the most popular among people in both categories? – generate a chart with services on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for up to and below the threshold level
-
-Query 3: Which Mosaic groups do people from both categories belong too? (which social groups use CEC services most actively) – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation)
-
-Query 4: Which services are being used by different Mosaic groups? – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for different services
-
+Query 1: gather relevant data, count number of all interactions of a user, assign a value based on the counter identifying the category as described above (up to three, above three), assign Mosaic groups to entries\\
+Query 2: Which services are the most popular among people in both categories? – generate a chart with services on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for up to and below the threshold level\\
+Query 3: Which Mosaic groups do people from both categories belong too? (which social groups use CEC services most actively) – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation)\\
+Query 4: Which services are being used by different Mosaic groups? – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for different services\\
 Query 5: Which Mosaic group is the most active within a service? This part of the report is using “value prompts” which allow to select a service which will be analysed. It shows a chart for the selected service.
 			
 			\subsubsection{Implementation}
@@ -545,11 +507,6 @@ Query 5: Which Mosaic group is the most active within a service? This part of th
   \captionof{figure}{Report 3, Query 2 (above three)}
   \label{normal_case}
 \end{center}
-
-
-
-
-
 
 
 
@@ -646,38 +603,28 @@ In this part, selected problems experienced during the project are described. Th
 \item The fact that the project had an open nature at the beginning was a very important part of it and helped in achieving a natural convergence between different teams of CEC and making the outcomes relevant and useful to the Council. However, this should not result in not having a clear business owner (e.g. Business Intelligence and Digital Service). Allocating even a small amount of resources (time of people involved) by senior management would help the project by not putting the burden of excessive time on CEC employees and would help in getting access to the licensed platforms within existing structures.
 \item In order to work with ICT systems in the Council a workstation (from the Council) is required. It would help to use a laptop together with the account created for the temporary pass that would have all the necessary accesses. During the project, the use of a laptop had to be supervised (putting additional burden on CEC employees) together with an account that had extremely limited storage space.
 \item Difficulties were experienced when creating charts using calculated fields (no problems using values from a database). Charts do not work with automated aggregation function, you have to use “none” as the aggregation function.
-
-\begin{figure}
-\centering
-     \includegraphics[width=\textwidth]{Report 3/report 3, chart 1, aggregation function not set.jpg}
-      \caption{Report 3, Query 2. Aggregation function not set to "none"}
-       \label{normal_case}
-\end{figure}
-
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/report 3, chart 1, aggregation function not set.jpg}
+  \captionof{figure}{Report 3, Query 2. Aggregation function not set to "none"}
+  \label{normal_case}
+\end{center}
 \item The CRM data source file had blank entries. IBM Cognos considered them valid (did not filter them out). They were showing up in all analyses as empty and could not be filtered out. There was about 4200 of them. They were removed from the extract manually.
-
-\begin{figure}
-\centering
-     \includegraphics[width=\textwidth]{Report 3/data_source_problem.jpg}
-      \caption{Report 3, Query 2. Empty entries showing up in all analyses}
-       \label{normal_case}
-\end{figure}
-
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 3/data_source_problem.jpg}
+  \captionof{figure}{Report 3, Query 2. Empty entries showing up in all analyses}
+  \label{normal_case}
+\end{center}
 \item When a filter was implemented and then removed a result would be generated (different from when the filter was present). However, if the platform was restarted the results were different (for the same report).
-
-\begin{figure}
-\centering
-     \includegraphics[width=\textwidth]{Report 1/problem.jpg}
-      \caption{before restarting platform}
-       \label{normal_case}
-\end{figure}
-
-\begin{figure}
-\centering
-     \includegraphics[width=\textwidth]{Report 1/report 1, query 3.jpg}
-      \caption{after restarting platform}
-       \label{normal_case}
-\end{figure}
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 1/problem.jpg}
+  \captionof{figure}{before restarting platform}
+  \label{normal_case}
+\end{center}
+\begin{center}
+  \includegraphics[width=\textwidth]{Report 1/report 1, query 3.jpg}
+  \captionof{figure}{after restarting platform}
+  \label{normal_case}
+\end{center}
 
 \end{itemize}
 
