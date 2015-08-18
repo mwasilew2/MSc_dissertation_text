@@ -137,6 +137,95 @@ IBM Cognos can be accessed using either a web interface called IBM Cognos Connec
 The URL for accessing the development instance of IBM Cognos Connection is:\\
 http://c-cog-dev-app-1/ibmcognos/
 
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/welcome page of web interface of Cognos.jpg}
+      \caption{Welcome page of IBM Cognos Connection 10.2.1 (web interface to the entire package)}
+       \label{normal_case}
+\end{figure}
+
+From this welcome page you can start applications available within your license, e.g. Report Studio. The first step after starting Report Studio is selection of the data package that will be used.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/select package for Report Studio.jpg}
+      \caption{Select data package for Report Studio}
+       \label{normal_case}
+\end{figure}
+
+After selecting the data package, one can either open an existing report or start creating a new one. In the latter case, a number of templates are available.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/report studio welcome page.jpg}
+      \caption{Report Studio welcome page}
+       \label{normal_case}
+\end{figure}
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/select template.jpg}
+      \caption{Select a template}
+       \label{normal_case}
+\end{figure}
+
+The following figure shows Report Studio with a blank report and Mosaic data loaded.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/blank template, mosaic data loaded.jpg}
+      \caption{Blank template, Mosaic data loaded}
+       \label{normal_case}
+\end{figure}
+
+Graphic User Interface (GUI) makes the entire process quick and easy, but it is used to set the general structure of the report. The specifics of the report, e.g. how to filter data, have to implemented using queries.
+
+Example of a single SQL query (filter):
+\begin{lstlisting}
+if ([No of interactions with CEC] > 3) then ( 'above 3') else ('up to 3')
+\end{lstlisting}
+Example of a counter:
+\begin{lstlisting}
+count(rows for [MW].[MW].[Date Created], [MW].[MW].[UPRN], [MW].[MW].[Subject])
+\end{lstlisting}
+Example of the SQL query used to generate an entire report (the entire report can be exported to an XML format as well):
+\begin{lstlisting}
+select 
+       MW."Creation Source"  as  Creation_Source,
+       MW."Group"  as  Group2,
+       MW."Date Created"  as  Date_Created,
+       MW."Reference #"  as  Reference__,
+       MW.Subject  as  Subject,
+       MW."Product Hierarchy"  as  Product_Hierarchy,
+       MW.UPRN  as  UPRN,
+       XCOUNT(MW."Reference #"  at MW.UPRN,MW."Reference #"  for MW.UPRN )  as  No_of_interactions_with_CEC,
+       D_MosaicGroupType.GroupTypeCode  as  Group_Type_Code
+ from 
+       MW...MW MW,
+       Mosaic.MosaicExport.dbo.D_MosaicGroupType D_MosaicGroupType,
+       Mosaic.MosaicExport.dbo.F_MosaicAddresses F_MosaicAddresses
+ where 
+       (MW.UPRN = F_MosaicAddresses.Uprn) and 
+       (D_MosaicGroupType.GroupTypeId = F_MosaicAddresses.MosaicGroupTypeId)
+ group by 
+       MW."Creation Source",
+       MW."Group",
+       MW."Date Created",
+       MW."Reference #",
+       MW.Subject,
+       MW."Product Hierarchy",
+       MW.UPRN,
+       D_MosaicGroupType.GroupTypeCode
+ filter 
+       (XCOUNT(MW."Reference #"  at MW.UPRN,MW."Reference #"  for MW.UPRN ) > 3)
+ order by 
+       Date_Created asc
+\end{lstlisting}
+
+If an item is removed from a report it is permanently removed. In most cases, that is not the intention and cut function should be used instead.
+
+The number of entries that can be imported from an external data source is limited to 20000. It is not a Council specific limit, it is a limit on the platform \citep{IBM2015d}. When a new package is created on top of another, it is not overwritten – a copy is created which contains both data sources.
+
 	\section{Define}
 	
 After the discovery phase an understanding of the specifics of the project within the Council has been achieved. The goal of the next phase was to narrow down the scope, find specific questions to be answered and make a decision about tools that would be used. Prototypes were created (simple reports) to prove the capabilities of the system. This phase ended with clear objectives and a general idea of technical aspects of implementing them.	
@@ -145,15 +234,72 @@ After the discovery phase an understanding of the specifics of the project withi
 		
 			\subsubsection{Meetings at the Council}
 			
+The diagram below shows all people I interacted with in the entire project with those I spoke with in this phase highlighted by coloured background. Orange background being for University related people and blue for people working for CEC.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[height=\textheight]{Define_phase_people.png}
+      \caption{CEC employees involved in the project.}
+       \label{normal_case}
+\end{figure}
+	
+At this stage the clients were encouraged to drive the design decisions, e.g. they had a final say in selecting questions to answer with this project. This was mostly done in cooperation with Sally Kerr and Andy Thomson.
+
+The meetings were also trying to select tools that would be used and if possible try to confirm they could be used by building a simple prototype. This was mostly done in collaboration with people from BI section of CEC, Kevin Kelly and Angela McInnes.
+
+Chris Jeffery was providing insights about the CRM dataset.
+
+Emilio G. Zamudio was another student of University of Edinburgh that was working on a project with CEC. During discussions with him I wanted to ensure that scopes of our projects do not overlap.
 			\subsubsection{First iteration (proof of concept)}
+			
+The purpose of this stage was to go through the entire cycle of development. Before discussing what kind of analyses would be useful to the Council I had to confirm that it was possible to use the two datasets together and understand what limitations to the process were. There were no existing reports of this kind so I had to create the Cognos package for CRM and Mosaic data.
+
+The Mosaic package has already been imported to the platform as it was being used in other Business Intelligence reports. The process of importing CRM data was manual, but it is planned to be automated in the future. It is assumed that UPRN uniquely identifies the user.
+
+What I needed to do was to add to the Mosaic package on IBM Cognos an external source of data (CRM dataset) using built-in Extract, Transform, Load (ETL) mechanisms, which required administrative access rights. The platform is quite flexible when it comes to file extensions and data formats. Some of the acceptable extensions include: .csv, .xls, .xlsx, .xml. The CRM dataset was extracted from the Council’s system and saved as an .xlsx file on a shared network drive. I then created the package and generated a few simple reports as described below.
+
 			
 			\subsubsection{Selected problems}
 			
 				\paragraph{Linking problem}
 				
+During the import stage where the CRM data was being added to the Mosaic package there was a problem with linking the two datasets. As a result, I was considering alternative solutions in which I would build the necessary tools.
+
+One of the analysed solutions included setting up a server with an SQL/NoSQL database, populating the database with the CRM and Mosaic data and then conducting analysis using SQL and Python. The focus of the project would shift and the insights generated would be of a different level and quantity. This would decrease usefulness of the project to CEC and move the project away from the initial objective.
+
+After a couple of failed attempts with Cognos I wanted to go through the process step by step and document the problem in as much detail as possible and move on to building the new set up. I was using Cognos documentation in the process (IBM 2015c), (IBM 2015d). Fortunately, the detailed approach adopted has led to finding a solution and the platform could be used in the project.
+
+\begin{figure}[hp]
+\centering
+     \includegraphics[width=\textwidth]{pre work/1st day Cognos - processed/importing CRM data into Cognos 2.jpg}
+      \caption{Importing CRM data to Report Studio, CRM data loaded, but Mosaic data unavailable for linking}
+       \label{normal_case}
+\end{figure}
+				
 				\paragraph{CRM data}
 				
+One of the problems with analysing CRM data was quality of the data. There are inconsistencies in implementations across different channels. For example, entries regarding requests for recycling bins or bags reported through two different channels had different values in the “subject” field: web - "Recycling bags or bins", phone - "Recycling bins or bags". Initially it was believed that it was an older implementation, but both values were present throughout the entire dataset suggesting both of them were in use. As a result, when analysing the data, filters had to include all possible strings related to the desired value or use a different field – “Product Hierarchy”, as was the case with the final reports.
+
+Another problem was related to lack of documentation of the deployment of the CRM system and difficulties in talking to someone knowledgeable about the system. The author could not establish in a reliable way the difference between “Product Hierarchy” field and “Subject” field. In the “incidents” table there are entries: “UPRN”, “second UPRN”, “UPRN 2” but they are not documented anywhere. In cases like this a “best guess” approach had to be used. 
+				
 		\subsection{Design of the solution}
+		
+The initial reports served as a learning experience during which I became more familiar with systems and narrowed down the objectives further. I also ensured I would have the necessary access rights before making a decision to pursue this direction.
+
+One of the decisions I had to make regarded data analysis methods. The advantage of using IBM Cognos was a very good integration of many smaller tools (e.g. ETL) and techniques (e.g. changing dimensions of analysis) which made the whole process much more effective and less time consuming. Consequently, I would be able to conduct much more analyses that would present more value to the Council.
+
+Selected advantages of using IBM Cognos:
+\begin{itemize}
+\item can be easily accessed by CEC employees (e.g. in their web browser)
+\item can be used by CEC employees in the future (they can feed my reports with other data extracts and conduct the same analysis on it)
+\item can be used as a starting point for future reports (they can go through my files to see how I did it, they can expand them adding or rearranging some parts of it)
+\item it is in line with the strategic direction of development of the Council so I would be directly contributing to the efforts of the Council
+\item it is within the CEC environment (no need to migrate my solution to CEC environment)
+\end{itemize}
+
+The problem with linking datasets almost led to making a decision to drop this direction entirely and setting up an alternative environment with SQL and Python (as described in Problems section above).
+
+In terms of ideas for analysis, I developed a list of questions I thought were relevant from the perspective of someone implementing or improving transactions at the Council. I than discussed it with CEC employees (Sally Kerr and Andy Thompson), added their ideas and gave them the final word about which ones to implement. The result was a list of three questions and a decision regarding further direction.
 		
 		\subsection{Design brief for the next stage}
 		
