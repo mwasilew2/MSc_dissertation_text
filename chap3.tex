@@ -92,15 +92,191 @@ For example, selected characteristics of group D, referred to as “Rural Realit
 
 
 
-
 		\subsection{IBM Cognos}
 		
 			\subsubsection{Introduction}
 			
+Addressing the need of businesses for software helping to achieve a competitive advantage, IBM has a rich portfolio of analytics products. These include solutions in areas of predictive analytics, risk analytics, prescriptive analytics, enterprise performance management and business intelligence \citep{IBM2015b}. Majority of IBM products in BI belong to Cognos family and include very specialized applications like “Cognos Supply Chain Performance Procurement Analytics” as well as general purpose tools like “Cognos Business Intelligence”.
+
+The solution used at CEC is IBM Cognos Business Intelligence 10.2.1 and it is a set of tools that significantly eases processes such as importing data from different formats (e.g. csv, xml, xlsx), combining relational and multidimensional data, generating reports (real time reports, drag-and-drop GUI, database queries in SQL and OLAP), scheduling and redistributing reports, publishing reports on multiple platforms and many more. Tools available at the CEC include: Report Studio, Query Studio, Analysis Studio.
+
+The same results can be achieved using different tools, but some of them are better fitted for a specific purpose. Report Studio was designed with reports creation in mind, Query Studio was optimized for creating and editing complex database queries. CEC has two types of instances of IBM Cognos – production and development machines, accessible under different URLs.
+
+IBM Cognos BI is an enterprise class SOA platform \citep{browne2010ibm}. Its n-tiered architecture is made up of:
+\begin{itemize}
+\item The web tier – provides user sessions connectivity to applications
+\item The application tier – load balancing and processing of requests, managing storage of customer application data
+\item The data tier
+\end{itemize}
+
+\begin{figure}
+\centering
+     \includegraphics[width=\textwidth]{cognos_architecture.jpg}
+      \caption{IBM Cognos BI architecture \citep{browne2010ibm}}
+       \label{normal_case}
+\end{figure}
+
+The platform operates by using different services which are run at those three levels \citep{browne2010ibm}, for example:
+\begin{itemize}
+\item Agent service – responsible for running agents, “determines which tasks to execute and forwards those tasks to the monitor service for execution”
+\item Monitor service – handles requests which will be run in the background including background tasks, reports scheduled to be run and e-mailed, jobs
+\item Query service – “manages Dynamic Query Mode requests and returns the results to the requesting batch”
+\end{itemize}
+			
+Selected alternatives to IBM Cognos BI:
+\begin{itemize}
+\item Qlik – http://global.qlik.com/uk
+\item CAFE – cognos analysis for Excel
+\item Tableu – http://www.tableau.com/
+\end{itemize}			
+			
 			\subsubsection{Working with IBM Cognos BI}
+			
+IBM Cognos can be accessed using either a web interface called IBM Cognos Connection or a Windows application. For the purpose of this project only web interface was used.
+
+The URL for accessing the development instance of IBM Cognos Connection is:\\
+http://c-cog-dev-app-1/ibmcognos/
 
 	\section{Define}
+	
+After the discovery phase an understanding of the specifics of the project within the Council has been achieved. The goal of the next phase was to narrow down the scope, find specific questions to be answered and make a decision about tools that would be used. Prototypes were created (simple reports) to prove the capabilities of the system. This phase ended with clear objectives and a general idea of technical aspects of implementing them.	
+	
+		\subsection{Preliminary work}
+		
+			\subsubsection{Meetings at the Council}
+			
+			\subsubsection{First iteration (proof of concept)}
+			
+			\subsubsection{Selected problems}
+			
+				\paragraph{Linking problem}
+				
+				\paragraph{CRM data}
+				
+		\subsection{Design of the solution}
+		
+		\subsection{Design brief for the next stage}
+		
+			\subsubsection{Report 1 - cases of intentional use of multiple channels for the same issue}
+			
+This analysis is aiming at identifying cases where citizens want to report an issue, but do not trust in it being handled the same way through different channels. The reasoning behind such behaviour is that if many tickets are opened for the same problem, one of them will “get the job done”. It will be solved the quickest possible way, because if the process behind one channel has more resources available it will be handled quicker than with the process behind another channel.
+
+The underlying assumption is that entries in the CRM system will not be identified as related to the same problem and that time of delivery differs across different channels.
+
+The purpose of this analysis is not to provide evidence about the assumptions being right or wrong, but to verify if such behaviour exists among receivers of the Council services.
+			
+			\subsubsection{Report 2 - patterns of behaviour across different channels}
+			
+			\subsubsection{Report 3 - who are the primary users of CEC services}
 
 	\section{Develop}
 	
+The implementation stage of the project started with three objectives coming from the previous phase. Subsequently, three reports were generated to provide analysis in those areas.
+
+Development started in a fresh environment. CEC has provided the author with a designated work space together with a laptop and all the access rights necessary for the implementation (access from the preliminary stage was revised and a different set up was used). Due to this, the IBM Cognos package containing Mosaic Experian and CRM data had to be recreated from scratch as described in the Define phase.
+
+The process in all three cases was to design a technical solution first and then implement it. The solution, a generated report, would consist of a number of queries that would provide results necessary to answer a question or an intermediate step (in more complex cases) that lead to the desired insights. For more information on stages in the report creation please see attached appendix containing a list of files used in the process.
+	
+		\subsection{Report 1 - cases of intentional use of multiple channels for the same issue}
+		
+This report is trying to provide evidence for existence of a specific type of behaviour where citizens report one and the same issue using many channels at the same time.
+
+Proving such behaviour using solely data analysis is very difficult and should not be left only to an algorithm. One of the problems with this kind of analysis is that behaviour of people with different intents might manifest in the data in the exactly same way. The report might put in one category users, whose behaviour was “malicious”, but also non individual users like landlords, who visit many sites and then report a bulk of issues, residents who struggled with submitting a web-form or first time users of CEC services who were helped in submitting a web-form by a consultant over the phone.
+
+It has to be stressed that this analysis is not trying to automatically mark people as “bad users”, but instead bring attention of a service manager to cases of unusual uses of the system. They might be pointing to a number of issues such as different delivery times across different channels, lack of trust in digital channels, low effectiveness of a channel in addressing a user need. They should be analysed and investigated further and should be treated as potential inspirations or initial influences for further improvement of service delivery.
+
+			\subsubsection{Technical design}
+			
+Query 1: gather all relevant data (do not include entries if channel is not specified) and add a counter for how many issues someone filed on one day
+
+Query 2: filter results of Query 1 so that only people who reported more than one issue on one day regarding the same subject are left
+
+Query 3: filter out from Query 2 cases with only one occurrence of such behaviour (of multiple issues regarding one subject reported on the same day)
+
+			\subsubsection{Implementation}
+			
+			\subsubsection{Additional work}
+			
+		\subsection{Report 2 - patterns of behaviour across different channels}
+		
+			\subsubsection{Technical design}
+			
+			\subsubsection{Implementation}
+			
+		\subsection{Report 3 - who are the primary users of CEC services}
+		
+This analysis starts from identifying users belonging to two categories as described in the Define phase, i.e. citizens who interacted up to three times with the Council and active users with more than three issues reported. After that, a series of queries are used in order to provide insights about socio-economic background of users.
+
+The letters at the bottom of charts (A,B,C,…) are Mosaic groups. Detailed information about each group can be access using Mosaic Portal – Segmentation. There, information is interpreted and visualised in a more human friendly way, as described in the Discover phase.
+
+			\subsubsection{Technical design}
+			
+			\subsubsection{Implementation}
+	
 	\section{Deliver}
+	
+		\subsection{Presentation at the Council}
+		
+In the delivery phase, the author gave a presentation to CEC employees. The purpose was to present the project as a whole, show how to use the reports and evaluate their usefulness (receive feedback). Below are some quotes from the meeting in which Sally Kerr, Andy Thomson and Gosia Szymczak took part.\\\\
+''It’s very useful for us as well to have somebody coming from outside and giving us a fresh perspective and it is work that we have to continue with, so it’s really interesting''\\
+Sally Kerr\\\\
+''One of the questions that we had, which obviously I think you didn’t really have time to completely develop or it might be in your dissertation, was looking at (…) number of profiles we had and try to look at usage across those, because when we had originally done those profiles we made a best guess at the forms they would use the most. One of the questions was, did we get it right? (…) it would be very interesting to do that, because I think we are at a stage, moving with the new ICT supplier, to review that, to actually look at that model and then how is the supply going forward and also in terms of the communication campaign as well''\\
+Sally Kerr\\\\
+''We haven’t been doing anything as in depth as that because nobody has asked us to do that. It’s interesting just to see (…) the person is trying and trying to do it three times on the web and it’s not going anywhere so there must be something.''\\
+Gosia Szymczak\\\\
+''I think the problem that we have (…) there is a bit of assumption with analysis there, which is very difficult to get away from unless you have user tests face-to-face (…) which I would recommend that we do, because however much (…) tracking tools, I still think you need to be going back to citizens just to actually make sure you are developing in the best way.''\\
+Sally Kerr\\\\
+''This is very interesting, just to get the indicators is very interesting and it’s something we can share, it’s just really important.''\\
+Sally Kerr\\\\
+''If a person is recording two or three times the same thing does that mean it’s one complain or is it three complaints from the same person. It’s helping us understand and analyse the stats, have a look at the stats, if the stats are correct, because there are three complaints from the same person on the same thing from the same address.''\\
+Gosia Szymczak\\\\
+''What we need is a good methodology for how you would do that (solve problems experienced by users), because we don’t have the resource to give that kind one-to-one all the time (go through an individual problem), so this is really useful.''\\
+Sally Kerr\\\\
+''To be honest, we should be really carrying out this kind of analysis regularly to actually see if behaviours are changing. (…) That’s a recommendation I would make, that we should be looking at how we do that for the future.''\\
+Sally Kerr\\\\
+''From University’s point of view there are definitely opportunities, now we know how it all works for students to be involved with a particular piece of work if it’s felt to be of interest. Working with BI on that, we will discover other areas that will be very useful as well.''\\
+Sally Kerr\\
+
+	\section{Problems}
+	
+In this part, selected problems experienced during the project are described. They are listed here in order to document the process as well as provide feedback for the design process:
+\begin{itemize}
+\item Due to informal form of the cooperation, for a substantial part of the project, the author did not have a pass to the building. It would be useful to have a starting date fixed in order to prepare a temporary pass and access rights for systems.
+\item The fact that the project had an open nature at the beginning was a very important part of it and helped in achieving a natural convergence between different teams of CEC and making the outcomes relevant and useful to the Council. However, this should not result in not having a clear business owner (e.g. Business Intelligence and Digital Service). Allocating even a small amount of resources (time of people involved) by senior management would help the project by not putting the burden of excessive time on CEC employees and would help in getting access to the licensed platforms within existing structures.
+\item In order to work with ICT systems in the Council a workstation (from the Council) is required. It would help to use a laptop together with the account created for the temporary pass that would have all the necessary accesses. During the project, the use of a laptop had to be supervised (putting additional burden on CEC employees) together with an account that had extremely limited storage space.
+\item Difficulties were experienced when creating charts using calculated fields (no problems using values from a database). Charts do not work with automated aggregation function, you have to use “none” as the aggregation function.
+
+\begin{figure}
+\centering
+     \includegraphics[width=\textwidth]{Report 3/report 3, chart 1, aggregation function not set.jpg}
+      \caption{Report 3, Query 2. Aggregation function not set to "none"}
+       \label{normal_case}
+\end{figure}
+
+\item The CRM data source file had blank entries. IBM Cognos considered them valid (did not filter them out). They were showing up in all analyses as empty and could not be filtered out. There was about 4200 of them. They were removed from the extract manually.
+
+\begin{figure}
+\centering
+     \includegraphics[width=\textwidth]{Report 3/data_source_problem.jpg}
+      \caption{Report 3, Query 2. Empty entries showing up in all analyses}
+       \label{normal_case}
+\end{figure}
+
+\item When a filter was implemented and then removed a result would be generated (different from when the filter was present). However, if the platform was restarted the results were different (for the same report).
+
+\begin{figure}
+\centering
+     \includegraphics[width=\textwidth]{Report 1/problem.jpg}
+      \caption{before restarting platform}
+       \label{normal_case}
+\end{figure}
+
+\begin{figure}
+\centering
+     \includegraphics[width=\textwidth]{Report 1/report 1, query 3.jpg}
+      \caption{after restarting platform}
+       \label{normal_case}
+\end{figure}
+
+\end{itemize}
+
