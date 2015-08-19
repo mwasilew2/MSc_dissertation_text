@@ -49,7 +49,27 @@ The "Incidents" table selected for this project (which is a part of the CRM data
 		
 		\subsection{Mosaic UK Consumer and Demographic data}
 		
-Mosaic is a dataset created by Experian - credit reference agency. It provides insights about lifestyles and preferences of people across the United Kingdom. It identifies 14 social groups and a total of 57 types within those groups. It was built using more than 450 data variables and the sources include, but are not limited to \citep{Experian2014}:	
+Mosaic is a dataset created by Experian - credit reference agency. It provides insights about lifestyles and preferences of people across the United Kingdom. Depending on the version of the dataset, it identifies 56 types of households which are categorized into 14 general groups:
+\begin{itemize}
+\item A - City Prosperity
+\item B - Prestige Positions
+\item C - Country Living
+\item D - Rural Reality
+\item E - Senior Security
+\item F - Suburban Stability
+\item G - Domestic Success
+\item H - Aspiring Homemakers
+\item I - Family Basics
+\item J - Transient Renters
+\item K - Municipal Challenge
+\item L - Vintage Value
+\item M - Modest Traditions
+\item N - Rental Hubs
+\end{itemize}
+
+They are used to describe the entire UK population and are not specific to Scotland. Some areas are more densely populated by people from a specific type while other do not have any residents from it at all. Consequently, some types might not be present in Edinburgh at all while other might characterized an entire neighborhood.
+
+The dataset was built using more than 450 data variables and the sources include, but are not limited to \citep{Experian2014}:	
 
 \begin{itemize}
 \item Census
@@ -145,7 +165,7 @@ Example of a counter:
 \begin{lstlisting}
 count(rows for [MW].[MW].[Date Created], [MW].[MW].[UPRN], [MW].[MW].[Subject])
 \end{lstlisting}
-Example of the SQL query used to generate an entire report (the entire report can be exported to an XML format as well):
+Example of the SQL query used to generate an entire report (it can be exported to an XML format as well):
 \begin{lstlisting}
 select 
        MW."Creation Source"  as  Creation_Source,
@@ -210,8 +230,6 @@ The above screen shot is showing another query which was filtering entries based
 
 The diagram above shows a chart that was created and here you can see how the layout of the report can be controlled – at the top of the page a list is added.
 
-
-
 \begin{center}
   \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart.jpg}
   \captionof{figure}{first chart}
@@ -224,36 +242,29 @@ In this case, the chart was based on the data from the list above. This was done
   \captionof{figure}{data to confirm chart is valid}
 \end{center}
 
-
 \begin{center}
   \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/creating chart - first chart, other dimension.jpg}
   \captionof{figure}{first chart - other dimension}
 \end{center}
 
-
 This diagram shows exactly the same dataset, but a different dimension is used for axis x and data series.
 
 Below are a few more examples of reports generated.
-
 
 \begin{center}
   \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/second chart, crm and mosaic, all subjects, entire May.jpg}
   \captionof{figure}{second chart – group category, all subjects, entire May, zoom in to legend}
 \end{center}
 
-
 \begin{center}
   \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - all reports.png}
   \captionof{figure}{third chart - group code, all subjects}
 \end{center}
 
-
-
 \begin{center}
   \includegraphics[width=\textwidth]{pre work/2nd day Cognos - processed/group code - bins, recycle.png}
   \captionof{figure}{fourth chart - group code, missed bins, recycling bags (four categories)}
 \end{center}
-
 
 
 			\subsubsection{Selected problems}
@@ -294,34 +305,34 @@ Selected advantages of using IBM Cognos:
 
 In terms of ideas for analysis, I developed a list of questions I thought were relevant from the perspective of someone implementing or improving transactions at the Council. I than discussed it with CEC employees (Sally Kerr and Andy Thompson), added their ideas and gave them the final word about which ones to implement. The result was a list of three questions and a decision regarding further direction.
 		
-		\subsection{Design brief for the next stage}
-		
-The data analysis will be conducted using IBM Cognos platform and it will use Mosaic Experian package combined with an extract of the data from the CRM system. The reports generated will not be of performance indicators nature, but will try to find data that can show behaviour of citizens manifesting in the data. They are not (primarily) intended as monitoring tools, but rather as ways of expanding perception of what is happening in service delivery. The three main questions that will be answered are listed below and they are described in detail in the following sections:
+		\subsection{Design brief}
+This section is a "design brief" which is a starting point for the next phase. It consists of selection of tools to be used and specific objectives.
+
+The data analysis will be conducted using IBM Cognos platform and it will use Mosaic Experian package combined with an extract of the data from the CRM system. The reports generated will not be of performance indicators nature, but will try to find data that can show behaviour of citizens manifesting in the data. They are not (primarily) intended as monitoring tools, but rather as ways of expanding perception of what is happening in service delivery. The three main areas that will be covered are listed below and they are described in detail in the following sections:
 \begin{enumerate}
 \item Cases of intentional use of multiple channels for the same issue
 \item Patterns of behaviour across different channels
-\item Who are the primary users of CEC services
+\item Better understanding of primary users of CEC services
 \end{enumerate}
 		
 			\subsubsection{Report 1 - cases of intentional use of multiple channels for the same issue}
 			
-This analysis is aiming at identifying cases where citizens want to report an issue, but do not trust in it being handled the same way through different channels. Presumably, the reasoning behind such behaviour is that if many tickets are opened for the same problem, one of them will "get the job done". The underlying assumption is that entries in the CRM system will not be identified as related to the same problem and that time of delivery differs across different channels. It will be solved the quickest possible way, because if the process behind one channel has more resources available it will be handled quicker than with the process behind another channel.
+Analysis from Report 1 is aiming at identifying cases where citizens want to report an issue, but do not trust in it being handled the same way through different channels. Presumably, the reasoning behind such behaviour is that if many tickets are opened for the same problem, one of them will "get the job done". The underlying assumption is that entries in the CRM system will not be identified as related to the same problem and that time of delivery differs across different channels. It will be solved the quickest possible way, because if the process behind one channel has more resources available it will be handled quicker than with the process behind another channel.
 
 The purpose of this analysis is not to provide evidence about the assumptions being right or wrong, but to verify if such behaviour exists among receivers of the Council services.
 			
 			\subsubsection{Report 2 - patterns of behaviour across different channels}
 			
-The purpose of this analysis is to understand patterns of behaviour of citizens across many channels.
+The purpose of analysis within Report 2 is to understand patterns of behaviour of citizens across many channels.
 
 Some of the patterns that might be revealed include:
 \begin{itemize}
 \item The user initiated a service through a channel of preferred choice (e.g. web-form). However, after not hearing from the Council for some time, the user is unsure about the status of the process and uses a channel that is considered trustworthy (e.g. face-to-face) to confirm its state.
-\item If the above pattern occurs only for one type of transaction it might suggest a problem with a particular service. For example, if many users try to report a missed bin over a web-form, but eventually use a phone to do it (or switch after a few uses) it might highlight issues with this particular web-form.
-\item An active user who uses a particular service is trying out a digital interface, but for some reason goes back to how he access it before
-\item Numerical evidence for how quickly people adapt new channels (e.g. how effective an information campaign was)
+\item Many users try to report a missed bin over a web-form, but eventually use a phone to do it (which highlights an issue with a particular web-form).
+\item An active user who uses a particular service is trying out a digital interface, but for some reason goes back to how he accessed it before
 \end{itemize}	
 			
-			\subsubsection{Report 3 - who are the primary users of CEC services}
+			\subsubsection{Report 3 - Better understanding of primary users of CEC services}
 			
 Designing is a task that should be conducted with the user in mind and having an understanding of who is the primary receiver of the design helps tremendously. For this reason, designers use "personas" which make it easier to model how the user thinks or behaves. The more detailed and accurate information about the user one has, the  better design decisions one can make, which results in interfaces and services that better fit the needs of people.
 
@@ -351,7 +362,7 @@ The process in all three cases was to design a technical solution first and then
 	
 		\subsection{Report 1 - cases of intentional use of multiple channels for the same issue}
 		
-This report is trying to provide evidence for existence of a specific type of behaviour where citizens report one and the same issue using many channels at the same time.
+Report 1 is trying to provide evidence for existence of a specific type of behaviour where citizens report one and the same issue using many channels at the same time.
 
 Proving such behaviour using solely data analysis is very difficult and should not be left only to an algorithm. One of the problems with this kind of analysis is that behaviour of people with different intents might manifest in the data in the exactly same way. The report might group in the same category users with "scattershot" approach, but also non individual users like landlords, who visit many sites and then report a bulk of issues, residents who struggled with submitting a web-form or first time users of CEC services who were helped in submitting a web-form by a consultant over the phone.
 
@@ -376,7 +387,7 @@ Query 3: filter out from Query 2 cases with only one occurrence of such behaviou
 	
 			\subsubsection{Additional work}
 			
-There were only two cases found of multiple cases of reporting a few times a day and none of them was unwanted behaviour. It can be speculated that those were situations in which someone was having problems using CEC interfaces (cases of double entries with very short time distance).
+There were only two cases found of a resident reporting an issue over multiple channels over more than one day. It can be speculated that those were situations in which someone was having problems using CEC interfaces (cases of double entries with very short time distance).
 
 Query 4 was created after conducting the above analysis. Its purpose was to provide a general overview on the number of multiple reports to give an idea of how much people struggle with an interface and how quickly they learn it.
 
@@ -393,7 +404,7 @@ In simple words, there were 194 people in May 2015 who on two separate occasions
 			
 		\subsection{Report 2 - patterns of behaviour across different channels}
 		
-This part of analysis is trying to cast some light on behaviour of citizens across different channels.
+Report 2 is trying to cast some light on behaviour of citizens across different channels.
 
 It is based on two counters. The first one provides information about the total number of issues reported by a citizen ("count no of issues"). The second one counts the number of separate channels used to report those issues ("channels used"). Then filters are used to remove from the report cases with the number of issues below two ("count no of issues \textgreater 1") and the number of channels used below two ("channels used \textgreater 1").
 
@@ -421,9 +432,9 @@ Query 1: count number of issues reported by a citizen, count number of channels 
       \caption{Report 2, example}
 \end{figure}
 			
-		\subsection{Report 3 - who are the primary users of CEC services}
+		\subsection{Report 3 - Better understanding of primary users of CEC services}
 		
-This analysis starts from identifying users belonging to two categories as described in the Define phase, i.e. citizens who interacted up to three times with the Council and active users with more than three issues reported. After that, a series of queries are used in order to provide insights about socio-economic background of users.
+Report 3 starts from identifying users belonging to two categories as described in the Define phase, i.e. citizens who interacted up to three times with the Council and active users with more than three issues reported. After that, a series of queries are used in order to provide insights about socio-economic background of users.
 
 The letters at the bottom of charts (A,B,C,…) are Mosaic groups. Detailed information about each group can be access using Mosaic Portal – Segmentation. There, information is interpreted and visualised in a more human friendly way, as described in the Discover phase.
 
