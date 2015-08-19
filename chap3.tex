@@ -10,7 +10,7 @@ At the beginning of the project I had no knowledge about the operations within t
 \begin{itemize}
 \item Are there any activities in the Council similar to the scope of the project (or were there any in the past)?
 \item Who would benefit from it and how to give those stakeholders an opportunity to be involved?
-\item What questions (in terms of “channel shift”) are not answered in the Council?
+\item What questions (in terms of "channel shift") are not answered in the Council?
 At what level of abstraction should the analysis be conducted?
 \item What IT systems/tools can be used in the project?
 \item Who has the necessary understanding of the infrastructure and activities on the architectural level?
@@ -23,7 +23,7 @@ Initially the contact person from the Council was Sally Kerr. In response to my 
 
 As it turned out, it was a first meeting in a series. There was no formalised documentation or central place with knowledge about on-going projects that was made available to the author. As a result, personal meetings were the only way to understand activity in the Council. Moreover, it was only thanks to good will of many employees at the City of Edinburgh Council that this was possible.
 
-The diagram below shows all the people who I interacted with during the entire project. Connections between different actors represent how I got to know them. Circles with coloured backgrounds highlight people who I spoke with in this phase. Orange colour marks people related with University of Edinburgh, blue is for CEC employees. Level of a circle does not reflect a position in the Council’s structure - it is used solely for increasing legibility of the diagram.
+The diagram below shows all the people who I interacted with during the entire project. Connections between different actors represent how I got to know them. Circles with coloured backgrounds highlight people who I spoke with in this phase. Orange colour marks people related with University of Edinburgh, blue is for CEC employees. Level of a circle does not reflect a position in the Council's structure - it is used solely for increasing legibility of the diagram.
 
 \begin{center}
   \includegraphics[height=0.95\textheight]{Discovery_phase_people.png}
@@ -32,17 +32,17 @@ The diagram below shows all the people who I interacted with during the entire p
 \end{center}
 
 
-From these meetings and discussions I gained a brief understanding of the situation at CEC. There was a big effort within the Council aiming at transforming the way services are being delivered and “Channel Shift” was a part of it. The outsourced ICT services in the Council were delivered by British Telecom starting from 2001 and the contract was set to end in 2016. In order to find a new service provider under revised conditions, a public tender was being held during the writing of this thesis. It considered “Channel Shift” as one of the significant enhancements of the Council’s operations. Final report suggesting the best bidder was submitted by the Finance and Resources Committee on third of August 2015 \citep{FinanceandResourcesCommittee2016}.
+From these meetings and discussions I gained a brief understanding of the situation at CEC. There was a big effort within the Council aiming at transforming the way services are being delivered and "Channel Shift" was a part of it. The outsourced ICT services in the Council were delivered by British Telecom starting from 2001 and the contract was set to end in 2016. In order to find a new service provider under revised conditions, a public tender was being held during the writing of this thesis. It considered "Channel Shift" as one of the significant enhancements of the Council's operations. Final report suggesting the best bidder was submitted by the Finance and Resources Committee on third of August 2015 \citep{FinanceandResourcesCommittee2016}.
 
 In summer 2014 a new CRM system was introduced called Oracle RightNow. It was replacing the old system called Capture. The deployment was part of the transformation. The system was used to capture information about all interactions with citizens and in some cases it meant that entries did not have all the values specified (due to the nature of an inquiry). The incompleteness of entries did not make them useless as they could still inform about things like level of use. The data captured has not been analysed from the angle described in this project (socio-economic insights) and it was confirmed that such analysis would be useful for the Council.
 
 The transformation within the Council was also trying to centralise Business Intelligence capabilities. The BI department had a number of responsibilities and systems. One of those systems was called IBM Cognos. It was fully operational and a number of reports were generated and delivered to other stakeholders. However, the scale of deployment was still unclear and many departments were still figuring out the role the system would play in their operations. Many services required more digitisation and given the strategy, they could potentially use Cognos in the process. CRM data was an example of a dataset that was promising in providing valuable business insights.
 
-Considering the above, the project would develop a piece of work that would increase know-how within the Council (in terms of using data analysis for designing services and interfaces), provide a “case study” and directly deliver business value to the organisation. The tools and datasets that could be used are described in the following sections.
+Considering the above, the project would develop a piece of work that would increase know-how within the Council (in terms of using data analysis for designing services and interfaces), provide a "case study" and directly deliver business value to the organisation. The tools and datasets that could be used are described in the following sections.
 
 		\subsection{CRM data}
 		
-The new system used at the Council was called RightNow and was provided by Oracle. It was a cloud service and the data in the system was available to CEC employees after registration (with staff number) and installation of the interface. The database consisted of a number of tables, e.g. “Answers” which was a “knowledge base for consultants”. The table used in the project was “Incidents” and it contained information about transactions initiated by citizens (issues reported by them through all channels). This choice was dictated by the scope of the project - de facto by preferences of the clients who were interested in better understanding of the usage patterns of citizens.
+The new system used at the Council was called RightNow and was provided by Oracle. It was a cloud service and the data in the system was available to CEC employees after registration (with staff number) and installation of the interface. The database consisted of a number of tables, e.g. "Answers" which was a "knowledge base for consultants". The table used in the project was "Incidents" and it contained information about transactions initiated by citizens (issues reported by them through all channels). This choice was dictated by the scope of the project - de facto by preferences of the clients who were interested in better understanding of the usage patterns of citizens.
 
 Unique Property Reference Number (UPRN) is a number uniquely identifying a household in Edinburgh and thus a person (or a family). Incidents table had a column named UPRN which provided information about who reported the issue. The Mosaic personas (introduced in the next section) were also using UPRN making it possible to link the two datasets. The table had dozens of columns containing information about things like channel used to report the issue, postcode where it was reported, date, Service Level Agreement (SLA).
 
@@ -59,7 +59,7 @@ Mosaic is a dataset created by Experian - credit reference agency. It provides i
 \item Higher Education Statistics Authority (HESA)
 \item Electoral Roll
 \item Council Tax property valuations
-\item YouGov’s survey of consumers and their financial behaviour
+\item YouGov's survey of consumers and their financial behaviour
 \item British Crime Survey
 \end{itemize}
 
@@ -79,7 +79,7 @@ Some of the information about a household available in Mosaic includes:
 \item Access to technology
 \end{itemize}
 	
-For example, selected characteristics of group D, referred to as “Rural Reality”, include: rural locations, village and outlying houses, agricultural employment, affordable value homes, slow Internet speeds. People in this group are aged 66+, they have income of £20k- £29k, they live alone (or in “pseudo families”) and compared to the rest of the population are less likely to have children. They live in bungalows, named buildings or semidetached households in majority owned by them. Comparing to the rest of the population in the UK, they are half as likely to prefer being contacted via  mobile call (in contrary to a landline). Majority of them use “pay as you go” tariffs with mobile bill of 10 pounds or less, they read regional papers and are very likely to do groceries in Co-op and very unlikely to buy in Waitrose. Much bigger part of this group (compared to other groups in the UK) is likely to use e-mail monthly and not listen to music using mobile technologies. 
+For example, selected characteristics of group D, referred to as "Rural Reality", include: rural locations, village and outlying houses, agricultural employment, affordable value homes, slow Internet speeds. People in this group are aged 66+, they have income of £20k- £29k, they live alone (or in "pseudo families") and compared to the rest of the population are less likely to have children. They live in bungalows, named buildings or semidetached households in majority owned by them. Comparing to the rest of the population in the UK, they are half as likely to prefer being contacted via  mobile call (in contrary to a landline). Majority of them use "pay as you go" tariffs with mobile bill of 10 pounds or less, they read regional papers and are very likely to do groceries in Co-op and very unlikely to buy in Waitrose. Much bigger part of this group (compared to other groups in the UK) is likely to use e-mail monthly and not listen to music using mobile technologies. 
 
 \begin{center}
   \includegraphics[width=\textwidth]{mosaic_segmentation_portal.jpg}
@@ -92,7 +92,7 @@ For example, selected characteristics of group D, referred to as “Rural Realit
 		
 			\subsubsection{Introduction}
 			
-Addressing the need of businesses for software helping to achieve a competitive advantage, IBM has a rich portfolio of analytics products. These include solutions in areas of predictive analytics, risk analytics, prescriptive analytics, enterprise performance management and business intelligence \citep{IBM2015b}. Majority of IBM products in BI belong to Cognos family and include very specialized applications like “Cognos Supply Chain Performance Procurement Analytics” as well as general purpose tools like “Cognos Business Intelligence”.
+Addressing the need of businesses for software helping to achieve a competitive advantage, IBM has a rich portfolio of analytics products. These include solutions in areas of predictive analytics, risk analytics, prescriptive analytics, enterprise performance management and business intelligence \citep{IBM2015b}. Majority of IBM products in BI belong to Cognos family and include very specialized applications like "Cognos Supply Chain Performance Procurement Analytics" as well as general purpose tools like "Cognos Business Intelligence".
 
 The solution used at CEC is IBM Cognos Business Intelligence 10.2.1 and it is a set of tools that significantly eases processes such as importing data from different formats (e.g. csv, xml, xlsx), combining relational and multidimensional data, generating reports (real time reports, drag-and-drop GUI, database queries in SQL and OLAP), scheduling and redistributing reports, publishing reports on multiple platforms and many more. Tools available at the CEC include: Report Studio, Query Studio, Analysis Studio.
 
@@ -115,9 +115,9 @@ IBM Cognos BI is an enterprise class SOA platform \citep{browne2010ibm}. Its n-t
 
 The platform operates by using different services which are run at those three levels \citep{Browne2010}, for example:
 \begin{itemize}
-\item Agent service – responsible for running agents, “determines which tasks to execute and forwards those tasks to the monitor service for execution”
+\item Agent service – responsible for running agents, "determines which tasks to execute and forwards those tasks to the monitor service for execution"
 \item Monitor service – handles requests which will be run in the background including background tasks, reports scheduled to be run and e-mailed, jobs
-\item Query service – “manages Dynamic Query Mode requests and returns the results to the requesting batch”
+\item Query service – "manages Dynamic Query Mode requests and returns the results to the requesting batch"
 \end{itemize}
 			
 Selected alternatives to IBM Cognos BI:
@@ -229,7 +229,7 @@ The purpose of this stage was to go through the entire cycle of development. Bef
 
 The Mosaic package has already been imported to the platform as it was being used in other Business Intelligence reports. The process of importing CRM data was manual, but it is planned to be automated in the future. It is assumed that UPRN uniquely identifies the user.
 
-What I needed to do was to add to the Mosaic package on IBM Cognos an external source of data (CRM dataset) using built-in Extract, Transform, Load (ETL) mechanisms, which required administrative access rights. The platform is quite flexible when it comes to file extensions and data formats. Some of the acceptable extensions include: .csv, .xls, .xlsx, .xml. The CRM dataset was extracted from the Council’s system and saved as an .xlsx file on a shared network drive. I then created the package and generated a few simple reports as described below.
+What I needed to do was to add to the Mosaic package on IBM Cognos an external source of data (CRM dataset) using built-in Extract, Transform, Load (ETL) mechanisms, which required administrative access rights. The platform is quite flexible when it comes to file extensions and data formats. Some of the acceptable extensions include: .csv, .xls, .xlsx, .xml. The CRM dataset was extracted from the Council's system and saved as an .xlsx file on a shared network drive. I then created the package and generated a few simple reports as described below.
 
 The above diagram shows the package containing Mosaic and CRM datasets loaded in Cognos. A simple query is then used to show the content of it to verify that it is working as expect - CRM entries are linked with Mosaic entries with UPRN. The results of the query are visualised on the diagram below.
 
@@ -307,9 +307,9 @@ After a couple of failed attempts with Cognos I wanted to go through the process
 \end{center}
 	
 				\paragraph{CRM data}\mbox{}\\
-One of the problems with analysing CRM data was quality of the data. There are inconsistencies in implementations across different channels. For example, entries regarding requests for recycling bins or bags reported through two different channels had different values in the “subject” field: web - "Recycling bags or bins", phone - "Recycling bins or bags". Initially it was believed that it was an older implementation, but both values were present throughout the entire dataset suggesting both of them were in use. As a result, when analysing the data, filters had to include all possible strings related to the desired value or use a different field – “Product Hierarchy”, as was the case with the final reports.
+One of the problems with analysing CRM data was quality of the data. There are inconsistencies in implementations across different channels. For example, entries regarding requests for recycling bins or bags reported through two different channels had different values in the "subject" field: web - "Recycling bags or bins", phone - "Recycling bins or bags". Initially it was believed that it was an older implementation, but both values were present throughout the entire dataset suggesting both of them were in use. As a result, when analysing the data, filters had to include all possible strings related to the desired value or use a different field – "Product Hierarchy", as was the case with the final reports.
 
-Another problem was related to lack of documentation of the deployment of the CRM system and difficulties in talking to someone knowledgeable about the system. The author could not establish in a reliable way the difference between “Product Hierarchy” field and “Subject” field. In the “incidents” table there are entries: “UPRN”, “second UPRN”, “UPRN 2” but they are not documented anywhere. In cases like this a “best guess” approach had to be used. 
+Another problem was related to lack of documentation of the deployment of the CRM system and difficulties in talking to someone knowledgeable about the system. The author could not establish in a reliable way the difference between "Product Hierarchy" field and "Subject" field. In the "incidents" table there are entries: "UPRN", "second UPRN", "UPRN 2" but they are not documented anywhere. In cases like this a "best guess" approach had to be used. 
 				
 		\subsection{Design of the solution}
 		
@@ -341,7 +341,7 @@ The data analysis will be conducted using IBM Cognos platform and it will use Mo
 		
 			\subsubsection{Report 1 - cases of intentional use of multiple channels for the same issue}
 			
-This analysis is aiming at identifying cases where citizens want to report an issue, but do not trust in it being handled the same way through different channels. The reasoning behind such behaviour is that if many tickets are opened for the same problem, one of them will “get the job done”. It will be solved the quickest possible way, because if the process behind one channel has more resources available it will be handled quicker than with the process behind another channel.
+This analysis is aiming at identifying cases where citizens want to report an issue, but do not trust in it being handled the same way through different channels. The reasoning behind such behaviour is that if many tickets are opened for the same problem, one of them will "get the job done". It will be solved the quickest possible way, because if the process behind one channel has more resources available it will be handled quicker than with the process behind another channel.
 
 The underlying assumption is that entries in the CRM system will not be identified as related to the same problem and that time of delivery differs across different channels.
 
@@ -361,9 +361,9 @@ Some of the patterns that might be revealed include:
 			
 			\subsubsection{Report 3 - who are the primary users of CEC services}
 			
-Designing is a task that should be conducted with the user in mind and having an understanding of who is the primary receiver of the design helps tremendously. For this reason, designers use “personas” which make it easier to know how the user thinks or behaves. The more detailed and accurate information about the user one has, the  better design decisions one can make, which results in interfaces and services that better fit the needs of people.
+Designing is a task that should be conducted with the user in mind and having an understanding of who is the primary receiver of the design helps tremendously. For this reason, designers use "personas" which make it easier to know how the user thinks or behaves. The more detailed and accurate information about the user one has, the  better design decisions one can make, which results in interfaces and services that better fit the needs of people.
 
-The questions that will be answered within this part of work are trying to increase the understanding of users receiving Council’s services. In particular, 3 user groups are recognised:
+The questions that will be answered within this part of work are trying to increase the understanding of users receiving Council's services. In particular, 3 user groups are recognised:
 \begin{itemize}
 \item never used CEC services
 \item uses CEC services occasionally (defined here as having no more than 3 interactions with CEC)
@@ -391,9 +391,9 @@ The process in all three cases was to design a technical solution first and then
 		
 This report is trying to provide evidence for existence of a specific type of behaviour where citizens report one and the same issue using many channels at the same time.
 
-Proving such behaviour using solely data analysis is very difficult and should not be left only to an algorithm. One of the problems with this kind of analysis is that behaviour of people with different intents might manifest in the data in the exactly same way. The report might put in one category users, whose behaviour was “malicious”, but also non individual users like landlords, who visit many sites and then report a bulk of issues, residents who struggled with submitting a web-form or first time users of CEC services who were helped in submitting a web-form by a consultant over the phone.
+Proving such behaviour using solely data analysis is very difficult and should not be left only to an algorithm. One of the problems with this kind of analysis is that behaviour of people with different intents might manifest in the data in the exactly same way. The report might put in one category users, whose behaviour was "malicious", but also non individual users like landlords, who visit many sites and then report a bulk of issues, residents who struggled with submitting a web-form or first time users of CEC services who were helped in submitting a web-form by a consultant over the phone.
 
-It has to be stressed that this analysis is not trying to automatically mark people as “bad users”, but instead bring attention of a service manager to cases of unusual uses of the system. They might be pointing to a number of issues such as different delivery times across different channels, lack of trust in digital channels, low effectiveness of a channel in addressing a user need. They should be analysed and investigated further and should be treated as potential inspirations or initial influences for further improvement of service delivery.
+It has to be stressed that this analysis is not trying to automatically mark people as "bad users", but instead bring attention of a service manager to cases of unusual uses of the system. They might be pointing to a number of issues such as different delivery times across different channels, lack of trust in digital channels, low effectiveness of a channel in addressing a user need. They should be analysed and investigated further and should be treated as potential inspirations or initial influences for further improvement of service delivery.
 
 			\subsubsection{Technical design}
 Query 1: gather all relevant data (do not include entries if channel is not specified) and add a counter for how many issues someone filed on one day\\
@@ -436,9 +436,9 @@ In simple words, there were 194 people in May 2015 who on two separate occasions
 		
 This part of analysis is trying to cast some light on behaviour of citizens across different channels.
 
-It is based on 2 counters. The first one provides information about total number of issues reported by a citizen (“count no of issues”). The second one counts number of separate channels used to report those issues (“channels used”). Then filters are used to remove from the report cases with number of issues below 2 (“count no of issues > 1”) and number of channels used below 2 (“channels used > 1”).
+It is based on 2 counters. The first one provides information about total number of issues reported by a citizen ("count no of issues"). The second one counts number of separate channels used to report those issues ("channels used"). Then filters are used to remove from the report cases with number of issues below 2 ("count no of issues \textgreater 1") and number of channels used below 2 ("channels used \textgreater 1").
 
-In order to make the results easier to analyse, entries are grouped using UPRN – entries coming from one user are listed next to each other. Within this group, they are ordered using reference number (“Reference \#”). Reference number is used instead of date of creation because there are multiple cases where there is more than 1 entry during a day. In those situations, ordering by the date does not ensure the same sequence as the sequence of creation. Reference number on the other hand, consists of 2 parts: day of creation and a serial number assigned in an ascending manner and thus the original sequence can be deducted. In the following example, both reference numbers were created on the same day, but the second one was created later which can be determined by the second part of the string:
+In order to make the results easier to analyse, entries are grouped using UPRN – entries coming from one user are listed next to each other. Within this group, they are ordered using reference number ("Reference \#"). Reference number is used instead of date of creation because there are multiple cases where there is more than 1 entry during a day. In those situations, ordering by the date does not ensure the same sequence as the sequence of creation. Reference number on the other hand, consists of 2 parts: day of creation and a serial number assigned in an ascending manner and thus the original sequence can be deducted. In the following example, both reference numbers were created on the same day, but the second one was created later which can be determined by the second part of the string:
 \begin{lstlisting}
 150511-000837
 150511-000849
@@ -446,7 +446,7 @@ In order to make the results easier to analyse, entries are grouped using UPRN �
 
 The diagram below presents part of the report that was generated.
 
-Citizen with UPRN 000906026074 submitted a “Missed bin or box” request through the web-form on 5th May and made a phone call the next day regarding a service from the same “Product Hierarchy”. It can be speculated, that both interactions were about the same issue. In order to verify such claim these interactions would have to be investigated further, e.g. using comments left by consultants (unstructured data) \citep{baars2008management}. Such additional information would be extremely useful in determining reasons for the user following up over the phone.
+Citizen with UPRN 000906026074 submitted a "Missed bin or box" request through the web-form on 5th May and made a phone call the next day regarding a service from the same "Product Hierarchy". It can be speculated, that both interactions were about the same issue. In order to verify such claim these interactions would have to be investigated further, e.g. using comments left by consultants (unstructured data) \citep{baars2008management}. Such additional information would be extremely useful in determining reasons for the user following up over the phone.
 
 Citizen with UPRN 000906037096 submitted 2 queries for the same issue on 12th of May. The next day he submitted again 2 queries over the web for a different service, but what is really interesting is that after submitting them he made a phone call to the Council. This is a great example of identifying a situation where someone started with the web-form, but then for some reason made a phone call anyway. It might have been a simple question about the form, but clearly the person made the call after going through the web-form. It might be the case that putting the information the user requested on the form would help other users in the future.
 		
@@ -472,10 +472,10 @@ The letters at the bottom of charts (A,B,C,…) are Mosaic groups. Detailed info
 			\subsubsection{Technical design}
 			
 Query 1: gather relevant data, count number of all interactions of a user, assign a value based on the counter identifying the category as described above (up to three, above three), assign Mosaic groups to entries\\
-Query 2: Which services are the most popular among people in both categories? – generate a chart with services on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for up to and below the threshold level\\
-Query 3: Which Mosaic groups do people from both categories belong too? (which social groups use CEC services most actively) – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation)\\
-Query 4: Which services are being used by different Mosaic groups? – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by “Reference \#” field, count total aggregation) and data series for different services\\
-Query 5: Which Mosaic group is the most active within a service? This part of the report is using “value prompts” which allow to select a service which will be analysed. It shows a chart for the selected service.
+Query 2: Which services are the most popular among people in both categories? – generate a chart with services on axis x, number of entries on axis y (counted by "Reference \#" field, count total aggregation) and data series for up to and below the threshold level\\
+Query 3: Which Mosaic groups do people from both categories belong too? (which social groups use CEC services most actively) – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by "Reference \#" field, count total aggregation)\\
+Query 4: Which services are being used by different Mosaic groups? – generate a chart with Mosaic groups on axis x, number of entries on axis y (counted by "Reference \#" field, count total aggregation) and data series for different services\\
+Query 5: Which Mosaic group is the most active within a service? This part of the report is using "value prompts" which allow to select a service which will be analysed. It shows a chart for the selected service.
 			
 			\subsubsection{Implementation}
 			
@@ -576,23 +576,23 @@ Query 5: Which Mosaic group is the most active within a service? This part of th
 		\subsection{Presentation at the Council}
 		
 In the delivery phase, the author gave a presentation to CEC employees. The purpose was to present the project as a whole, show how to use the reports and evaluate their usefulness (receive feedback). Below are some quotes from the meeting in which Sally Kerr, Andy Thomson and Gosia Szymczak took part.\\\\
-''It’s very useful for us as well to have somebody coming from outside and giving us a fresh perspective and it is work that we have to continue with, so it’s really interesting''\\
+''It's very useful for us as well to have somebody coming from outside and giving us a fresh perspective and it is work that we have to continue with, so it's really interesting''\\
 Sally Kerr\\\\
-''One of the questions that we had, which obviously I think you didn’t really have time to completely develop or it might be in your dissertation, was looking at (…) number of profiles we had and try to look at usage across those, because when we had originally done those profiles we made a best guess at the forms they would use the most. One of the questions was, did we get it right? (…) it would be very interesting to do that, because I think we are at a stage, moving with the new ICT supplier, to review that, to actually look at that model and then how is the supply going forward and also in terms of the communication campaign as well''\\
+''One of the questions that we had, which obviously I think you didn't really have time to completely develop or it might be in your dissertation, was looking at (…) number of profiles we had and try to look at usage across those, because when we had originally done those profiles we made a best guess at the forms they would use the most. One of the questions was, did we get it right? (…) it would be very interesting to do that, because I think we are at a stage, moving with the new ICT supplier, to review that, to actually look at that model and then how is the supply going forward and also in terms of the communication campaign as well''\\
 Sally Kerr\\\\
-''We haven’t been doing anything as in depth as that because nobody has asked us to do that. It’s interesting just to see (…) the person is trying and trying to do it three times on the web and it’s not going anywhere so there must be something.''\\
+''We haven't been doing anything as in depth as that because nobody has asked us to do that. It's interesting just to see (…) the person is trying and trying to do it three times on the web and it's not going anywhere so there must be something.''\\
 Gosia Szymczak\\\\
 ''I think the problem that we have (…) there is a bit of assumption with analysis there, which is very difficult to get away from unless you have user tests face-to-face (…) which I would recommend that we do, because however much (…) tracking tools, I still think you need to be going back to citizens just to actually make sure you are developing in the best way.''\\
 Sally Kerr\\\\
-''This is very interesting, just to get the indicators is very interesting and it’s something we can share, it’s just really important.''\\
+''This is very interesting, just to get the indicators is very interesting and it's something we can share, it's just really important.''\\
 Sally Kerr\\\\
-''If a person is recording two or three times the same thing does that mean it’s one complain or is it three complaints from the same person. It’s helping us understand and analyse the stats, have a look at the stats, if the stats are correct, because there are three complaints from the same person on the same thing from the same address.''\\
+''If a person is recording two or three times the same thing does that mean it's one complain or is it three complaints from the same person. It's helping us understand and analyse the stats, have a look at the stats, if the stats are correct, because there are three complaints from the same person on the same thing from the same address.''\\
 Gosia Szymczak\\\\
-''What we need is a good methodology for how you would do that (solve problems experienced by users), because we don’t have the resource to give that kind one-to-one all the time (go through an individual problem), so this is really useful.''\\
+''What we need is a good methodology for how you would do that (solve problems experienced by users), because we don't have the resource to give that kind one-to-one all the time (go through an individual problem), so this is really useful.''\\
 Sally Kerr\\\\
-''To be honest, we should be really carrying out this kind of analysis regularly to actually see if behaviours are changing. (…) That’s a recommendation I would make, that we should be looking at how we do that for the future.''\\
+''To be honest, we should be really carrying out this kind of analysis regularly to actually see if behaviours are changing. (…) That's a recommendation I would make, that we should be looking at how we do that for the future.''\\
 Sally Kerr\\\\
-''From University’s point of view there are definitely opportunities, now we know how it all works for students to be involved with a particular piece of work if it’s felt to be of interest. Working with BI on that, we will discover other areas that will be very useful as well.''\\
+''From University's point of view there are definitely opportunities, now we know how it all works for students to be involved with a particular piece of work if it's felt to be of interest. Working with BI on that, we will discover other areas that will be very useful as well.''\\
 Sally Kerr\\
 
 	\section{Problems}
@@ -602,7 +602,7 @@ In this part, selected problems experienced during the project are described. Th
 \item Due to informal form of the cooperation, for a substantial part of the project, the author did not have a pass to the building. It would be useful to have a starting date fixed in order to prepare a temporary pass and access rights for systems.
 \item The fact that the project had an open nature at the beginning was a very important part of it and helped in achieving a natural convergence between different teams of CEC and making the outcomes relevant and useful to the Council. However, this should not result in not having a clear business owner (e.g. Business Intelligence and Digital Service). Allocating even a small amount of resources (time of people involved) by senior management would help the project by not putting the burden of excessive time on CEC employees and would help in getting access to the licensed platforms within existing structures.
 \item In order to work with ICT systems in the Council a workstation (from the Council) is required. It would help to use a laptop together with the account created for the temporary pass that would have all the necessary accesses. During the project, the use of a laptop had to be supervised (putting additional burden on CEC employees) together with an account that had extremely limited storage space.
-\item Difficulties were experienced when creating charts using calculated fields (no problems using values from a database). Charts do not work with automated aggregation function, you have to use “none” as the aggregation function.
+\item Difficulties were experienced when creating charts using calculated fields (no problems using values from a database). Charts do not work with automated aggregation function, you have to use "none" as the aggregation function.
 \begin{center}
   \includegraphics[width=\textwidth]{Report 3/report 3, chart 1, aggregation function not set.jpg}
   \captionof{figure}{Report 3, Query 2. Aggregation function not set to "none"}
