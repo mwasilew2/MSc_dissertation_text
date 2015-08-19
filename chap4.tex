@@ -6,15 +6,15 @@
 
 		\subsection{CRM data}
 		
-The CRM data is easy to extract from the RightNow system and it is formatted in a way that can be read by Cognos to build a package. The incidents table provides a very detailed picture of what is happening on every channel as entries are created even for queries where full data cannot be provided.
+The CRM data is easy to extract from the RightNow system and it is formatted in a way that can be read by Cognos to build a package. The "Incidents" table provides a very detailed picture of what is happening on every channel as entries are created even for queries where full data cannot be provided.
 
-The "incidents" table in the CRM system provides a lot of data for analysis, but is not sufficient to understand fully the situation around an interaction between a resident and the CEC. It would be extremely useful to combine it with analysis of unstructured data, e.g. comments left by consultants interacting with citizens.
+The "Incidents" table in the CRM system provides a lot of data for analysis, but is not sufficient to understand fully the situation around an interaction between a resident and the CEC. It would be extremely useful to combine it with analysis of unstructured data, e.g. comments left by consultants interacting with citizens.
 
-The "incidents" table in the CRM system contains only information about transactions initiated by citizens, e.g. they submitted a web-form. It would be very useful to combine this data with web analytics to widen the analysis and add cases where the form was not submitted, e.g. someone started filling the form, but for some reason did not submit it or made a phone call to the Council instead.
+The "Incidents" table in the CRM system contains only information about transactions initiated by citizens, e.g. they submitted a web-form. It would be very useful to combine this data with web analytics to widen the analysis and add cases where the form was not submitted, e.g. someone started filling the form, but for some reason did not submit it or made a phone call to the Council instead.
 
-In Report 1, Query 3, in the results you can see that on 05-15 and 05-18 someone contacted CEC regarding a service from the same "Product Hierarchy". However, they used different channels and values in field subject are different. This is probably due to inconsistencies in implementations between web and phone channel. This has an impact on the quality of data. 
+In Figure 3.13 (Report 1, Query 3) you can see that on 15-05-15 and 15-05-18 someone contacted CEC regarding a service from the same "Product Hierarchy". However, they used different channels and values in field subject are different. This is probably due to inconsistencies in implementations between web and phone channel. This has an impact on the quality of data. 
 
-The "incidents" table in the CRM system does not contain a field that allows identification of all entries related to one problem. Up to my best knowledge there is no mechanism at the moment to link multiple incidents entries regarding the same problem, e.g. many people reporting the same bin as missed. 
+The "Incidents" table in the CRM system does not contain a field that allows identification of all entries related to one problem. Up to my best knowledge there is no mechanism at the moment to link multiple "Incidents" entries regarding the same problem, e.g. many people reporting the same bin as missed. 
 
 It was difficult to determine a number of things about the CRM system and data. It would have been useful if access to the documentation was provided or a person knowledgeable about the system could provide support.
 
@@ -36,7 +36,7 @@ This report was looking for evidence of a specific behaviour in users. Therefore
 		
 The second analysis was more "exploratory". It was not looking for anything in particular, but rather was trying to cast some light on behaviour. As such, the data dictated the direction of this report.
 
-After initial findings it was clear that the analysis would benefit a lot from adding other sources of data to Cognos. One idea included adding unstructured data, such as comments of consultants handling an issue. Although it was possible to point to unusual cases, the incidents table was in many cases insufficient to provide definitive answers. It gives very detailed information, e.g. which interface citizens use and how, who uses them (which can help when controlling demographics in focus groups), but not details about the interactions regarding a particular issue. Another idea was to add web analytics data. The incidents table contains only information about issues reported to the Council. If a user went to the website and failed to submit a web form it would not be picked up by the CRM system. This potentially leaves out a lot of information about negative experiences of users.
+After initial findings it was clear that the analysis would benefit a lot from adding other sources of data to Cognos. One idea included adding unstructured data, such as comments of consultants handling an issue. Although it was possible to point to unusual cases, the "Incidents" table was in many cases insufficient to provide definitive answers. It gives very detailed information, e.g. which interface citizens use and how, who uses them (which can help when controlling demographics in focus groups), but not details about the interactions regarding a particular issue. Another idea was to add web analytics data. The "Incidents" table contains only information about issues reported to the Council. If a user went to the website and failed to submit a web form it would not be picked up by the CRM system. This potentially leaves out a lot of information about negative experiences of users.
 
 Considering the above, this report in no way exhausts the topic and there are many questions to be answered. It might point a service manager to specific cases, but they require further analysis.
 		
